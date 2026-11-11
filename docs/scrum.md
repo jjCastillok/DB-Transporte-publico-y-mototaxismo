@@ -27,6 +27,18 @@
 
 Cada historia tiene un resumen identificable (`P11 HU-nn`), criterios de aceptación y comentario inicial de seguimiento.
 
+## Seguimiento de tickets
+
+El Epic y las nueve historias tienen ahora una sección `Seguimiento P11` en la descripción con:
+
+- Identificador (`P11-EPIC`, `P11-HU-01`…`P11-HU-09`).
+- Propósito del ticket.
+- Qué se ha hecho hasta ahora, sin confundir preparación con pruebas ejecutadas.
+- Estado/ubicación en Jira.
+- Próximo paso y dependencias o bloqueos.
+
+También se añadió un comentario de actualización fechado 2026-11-10 en cada ticket para conservar el historial de seguimiento. HU-01 sigue en Sprint 0 con estado Jira `Idea`; HU-02–HU-09 permanecen en backlog. La conexión GitHub–Jira y su automatización siguen pendientes de verificación.
+
 ## Sprint activo
 
 `SCRUM Sprint 0` (ID 2) ya estaba activo al iniciar esta gestión, del 10 nov 2026 22:26 al 24 nov 2026 22:26 en hora de Bogotá (Jira guarda las marcas equivalentes en UTC). No se reinició ni se alteraron fechas. Se añadió únicamente `SCRUM-6`, para trabajar las preguntas pendientes primero. No se marcó `En curso` porque aún no hay respuestas del usuario.

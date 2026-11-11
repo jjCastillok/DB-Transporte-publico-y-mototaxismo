@@ -38,6 +38,12 @@ Archivos: bitácora y plan de commits.
 
 Archivo: `docs/scrum.md`.
 
+## Commit 7 — Sincronizar plan e historial
+
+**Mensaje:** `SCRUM-5 docs: sync Sprint dates and commit history`.
+
+Archivos: bitácora y plan de commits.
+
 ## Commits posteriores — Fases aprobadas
 
 Cada fase aprobada tendrá uno o más commits con un alcance pequeño, mensaje que describa el cambio y una clave Jira. Ejemplo: `SCRUM-6 docs: close conceptual questions`. No marcar una historia como iniciada por la mera presencia de una clave hasta que la automatización se configure y compruebe.

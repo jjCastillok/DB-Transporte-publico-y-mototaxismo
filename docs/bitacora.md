@@ -17,6 +17,8 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - La bitácora y el plan de commits se reconciliaron en [SCRUM-14 docs: reconcile Jira and GitHub history](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/489360e4a006021fa882647ce2650b364905405f).
 - El Sprint se documenta en hora de Bogotá: 10 nov 2026 22:26–24 nov 2026 22:26. Jira almacena los instantes correspondientes en UTC.
 - Se publicó la precisión horaria como [SCRUM-5 docs: clarify active sprint dates in Bogota time](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/aa76159797174df6dbb516a45f67a22848e30ec5).
+- La sincronización del plan/bitácora con ese ajuste quedó publicada en [SCRUM-5 docs: sync Sprint dates and commit history](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/f22bf6a7ff1337baf65da106c90c72281d24ddc7).
+- Se ampliaron las descripciones del Epic y de `SCRUM-6`–`SCRUM-14` con identificadores P11, propósito, trabajo realizado, estado, siguiente paso y dependencias. Se agregó un comentario de actualización a cada ticket para que la próxima sesión pueda retomarse sin revisar toda la conversación.
 - El repositorio contiene README, Prompt Maestro, organización Scrum, bitácora, backlog, análisis y evidencias E1–E4. Los Word de referencia del curso se mantienen fuera del repositorio público.
 
 ## 2026-11-10 — Inicio y revisión de materiales
