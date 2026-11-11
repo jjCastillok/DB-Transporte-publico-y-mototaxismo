@@ -1,0 +1,13 @@
+# Credenciales y configuración local
+.env
+*.local
+
+# Exportaciones locales y archivos temporales de bases de datos
+*.sql.gz
+*.bak
+*.tmp
+
+# Entornos y cachés
+.venv/
+venv/
+__pycache__/
