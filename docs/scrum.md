@@ -29,7 +29,7 @@ Cada historia tiene un resumen identificable (`P11 HU-nn`), criterios de aceptac
 
 ## Sprint activo
 
-`SCRUM Sprint 0` (ID 2) ya estaba activo al iniciar esta gestión, con periodo 11–25 nov 2026 según Jira. No se reinició ni se alteraron fechas. Se añadió únicamente `SCRUM-6`, para trabajar las preguntas pendientes primero. No se marcó `En curso` porque aún no hay respuestas del usuario.
+`SCRUM Sprint 0` (ID 2) ya estaba activo al iniciar esta gestión, del 10 nov 2026 22:26 al 24 nov 2026 22:26 en hora de Bogotá (Jira guarda las marcas equivalentes en UTC). No se reinició ni se alteraron fechas. Se añadió únicamente `SCRUM-6`, para trabajar las preguntas pendientes primero. No se marcó `En curso` porque aún no hay respuestas del usuario.
 
 **Objetivo operativo:** cerrar las decisiones conceptuales antes de iniciar el modelo lógico. Las demás historias quedan en backlog por depender de aprobaciones o entregables previos.
 
