@@ -14,6 +14,9 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - No se modificaron tickets genéricos preexistentes.
 - Se publicaron los artefactos del proyecto en `main` mediante dos commits agrupados: [organización y backlog](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/e5d212d6a0a20137d28936383afcc79f30567811) (`SCRUM-5 docs: publish project workflow and Scrum backlog`) y [Fase 1 conceptual](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/e62b42b8c744c0fbdee9a809b998ae5877a87865) (`SCRUM-5 docs: publish approved conceptual phase`).
 - Se publicó [la guía de automatización Jira–GitHub](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/6426f64cef432ac076883eaff85ef76060af88e3) con el mensaje `SCRUM-14 docs: record Jira automation setup and history`; distingue el estado observado de la configuración aún pendiente.
+- La bitácora y el plan de commits se reconciliaron en [SCRUM-14 docs: reconcile Jira and GitHub history](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/489360e4a006021fa882647ce2650b364905405f).
+- El Sprint se documenta en hora de Bogotá: 10 nov 2026 22:26–24 nov 2026 22:26. Jira almacena los instantes correspondientes en UTC.
+- Se publicó la precisión horaria como [SCRUM-5 docs: clarify active sprint dates in Bogota time](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/aa76159797174df6dbb516a45f67a22848e30ec5).
 - El repositorio contiene README, Prompt Maestro, organización Scrum, bitácora, backlog, análisis y evidencias E1–E4. Los Word de referencia del curso se mantienen fuera del repositorio público.
 
 ## 2026-11-10 — Inicio y revisión de materiales

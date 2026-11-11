@@ -26,7 +26,19 @@ El usuario aprobó la fase conceptual. Las preguntas Q01–Q03 permanecen abiert
 
 Archivos: `README.md`, `docs/bitacora.md`, `docs/plan_commits.md`, `docs/automatizacion_jira.md`.
 
-## Commit 5 y siguientes — Fases aprobadas
+## Commit 5 — Reconciliar historial
+
+**Mensaje:** `SCRUM-14 docs: reconcile Jira and GitHub history`
+
+Archivos: bitácora y plan de commits.
+
+## Commit 6 — Corregir fechas del Sprint en zona local
+
+**Mensaje:** `SCRUM-5 docs: clarify active sprint dates in Bogota time`
+
+Archivo: `docs/scrum.md`.
+
+## Commits posteriores — Fases aprobadas
 
 Cada fase aprobada tendrá uno o más commits con un alcance pequeño, mensaje que describa el cambio y una clave Jira. Ejemplo: `SCRUM-6 docs: close conceptual questions`. No marcar una historia como iniciada por la mera presencia de una clave hasta que la automatización se configure y compruebe.
 
