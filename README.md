@@ -28,6 +28,7 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - [Diagrama Chen editable](docs/03_diagrama_conceptual.drawio)
 - [Plan de commits](docs/plan_commits.md)
 - [Propuesta de backlog Jira](docs/backlog_jira_propuesta.md)
+- [Vinculación y automatización Jira–GitHub](docs/automatizacion_jira.md)
 - [Prompt Maestro](Text_Prompt_Maestro.txt)
 
 ## Decisiones por confirmar
