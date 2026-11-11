@@ -20,7 +20,13 @@ Archivos: `docs/01_analisis_semantico.md`, `docs/02_catalogo_conceptual.md`, `do
 
 El usuario aprobó la fase conceptual. Las preguntas Q01–Q03 permanecen abiertas para precisar el modelo lógico.
 
-## Commit 3 y siguientes — Fases aprobadas
+## Commit 4 — Seguimiento de la integración
+
+**Mensaje:** `SCRUM-14 docs: record Jira automation setup and history`
+
+Archivos: `README.md`, `docs/bitacora.md`, `docs/plan_commits.md`, `docs/automatizacion_jira.md`.
+
+## Commit 5 y siguientes — Fases aprobadas
 
 Cada fase aprobada tendrá uno o más commits con un alcance pequeño, mensaje que describa el cambio y una clave Jira. Ejemplo: `SCRUM-6 docs: close conceptual questions`. No marcar una historia como iniciada por la mera presencia de una clave hasta que la automatización se configure y compruebe.
 
@@ -32,5 +38,5 @@ La guía del proyecto y el ejemplo de P01 se conservarán como referencias local
 
 - Repositorio remoto: [jjCastillok/DB-Transporte-publico-y-mototaxismo](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo), público, rama `main`.
 - Jira muestra GitHub for Atlassian instalado; conexión de este repositorio y regla automática de commits a `En curso` pendientes de verificación.
-- Los commits agrupados se publicarán con las herramientas oficiales de GitHub; no incluirán los documentos de referencia del curso.
+- Los commits agrupados se publican con las herramientas de GitHub; no incluyen los documentos de referencia del curso.
 - El historial verificado también está enlazado en `docs/bitacora.md`.
