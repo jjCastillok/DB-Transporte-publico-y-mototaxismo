@@ -30,30 +30,35 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - [Normalización hasta 3FN — E6](docs/06_normalizacion.md)
 - [Diagrama lógico — E7](docs/07_diagrama_logico.md)
 - [Trazabilidad lógica — E8](docs/08_trazabilidad_logica.csv)
+- [Diccionario físico MariaDB — E9](docs/09_diccionario_fisico.csv)
+- [Especificación física MariaDB — E10](docs/10_especificacion_fisica.md)
+- [Verificación previa MariaDB — E11](docs/11_verificacion_previa.md)
 - [Plan de commits](docs/plan_commits.md)
 - [Propuesta de backlog Jira](docs/backlog_jira_propuesta.md)
 - [Vinculación y automatización Jira–GitHub](docs/automatizacion_jira.md)
 - [Prompt Maestro](Text_Prompt_Maestro.txt)
 
-## Decisiones por confirmar
+## Decisiones y pendientes
 
-- Revisión y aprobación del diseño lógico E5–E8, incluidos los supuestos temporales y de habilitación aún listados en `docs/01_analisis_semantico.md`.
-- Motor y versión del sistema gestor.
+- La Fase 2 lógica fue aprobada por el usuario el 14 nov 2026.
+- MariaDB fue elegido; la versión instalada no se ha cotejado. MariaDB 11.8.9 LTS es objetivo propuesto, no una versión confirmada en el equipo.
+- Revisar y aprobar la Fase 3 física E9–E11, incluidos pendientes de estados, terminales, accesibilidad, referencias protegidas y concurrencia.
 - Integrantes, duración de Sprint y fechas de entrega.
-- Confirmar acceso del conector GitHub for Atlassian al repositorio e implementar la regla de automatización en Jira.
+- Jira queda en pausa por decisión del usuario; sus referencias conservan el último estado observado y no representan cambios posteriores.
 
 ## Preferencias acordadas
 
 - Java para POO si el alcance requiere código de aplicación.
 - Markdown durante el trabajo y Word al final.
-- Scrum en Jira, en el tablero existente `SCRUM board` del proyecto `SCRUM`; épico e historias P11 ya creados.
+- Scrum documentado en `docs/scrum.md` y commits de GitHub. Jira se conserva como historial y queda en pausa por decisión del usuario.
 - Repositorio GitHub público: [DB-Transporte-publico-y-mototaxismo](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo).
-- Sprint 0 activo: HU-01 está Finalizada y HU-02 está En curso. Jira tiene un board visible con columnas BD-TPM, En curso, Pruebas y Finalizado; ver [Scrum](docs/scrum.md).
+- Último estado Jira observado: Sprint 0 con HU-01 Finalizada y HU-02 En curso. No se actualizaron tickets después de la decisión de pausar Jira; ver [Scrum](docs/scrum.md).
 
 ## Estado del diseño
 
-Las decisiones sobre inspecciones, cobertura por Sector y simultaneidad fueron recibidas el 14 nov 2026. La revisión de 3FN estática se documenta en E6. El modelo lógico está propuesto y aún requiere aprobación; no se ha elegido SGBD y no se han generado scripts SQL ni código Java.
+Las decisiones sobre inspecciones, cobertura por Sector y simultaneidad fueron recibidas el 14 nov 2026. La Fase 2 lógica fue aprobada; la revisión estática de 3FN se documenta en E6. La Fase 3 se prepara para MariaDB. Todavía no se han generado scripts SQL ni código Java.
 
 ## Criterio de implementación
 
 Se preferirán nombres claros, clases y métodos pequeños, SQL legible y funciones que se puedan explicar. Se incorporará polimorfismo donde resuelva una variación real del problema, sin añadir capas ni patrones innecesarios. No se escribirá código definitivo antes de revisar el enunciado y aprobar el diseño correspondiente.
+
