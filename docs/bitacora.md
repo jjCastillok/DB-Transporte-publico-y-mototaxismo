@@ -2,6 +2,26 @@
 
 Registro cronológico para saber qué se hizo, qué falta y cómo retomar el proyecto.
 
+## Solicitud P11-CR-01 · tickets/tokens de acceso vehicular (2026-11-14)
+
+- El usuario pidió gestionar tickets y tokens para registrar entrada/salida de vehículos y documentar la gestión del código SQL para MariaDB/Workbench.
+- Se registró la solicitud como cambio de alcance porque E5 solo modelaba confirmaciones genéricas de servicio por Sector y no definía eventos explícitos de entrada/salida.
+- Se creó `docs/solicitud_cambio_01_tickets_tokens.md` con proceso propuesto, alternativas, privacidad y decisiones pendientes; `docs/gestion_codigo_mariadb.md` documenta estructura y manejo futuro de SQL.
+- Se preguntó si entrada/salida significa inicio y fin de asignación, control en terminal/patio o ambos. La definición queda pendiente; el modelo y el DDL final no se modifican hasta incorporar esa respuesta y aprobación.
+- No se emitieron tickets ni tokens reales, no se guardó secreto y no se generó DDL, trigger ni procedimiento.
+
+## Aprobación de Fase 2 y preparación de Fase 3 (2026-11-14)
+
+- El usuario aprobó la Fase 2 y eligió **MariaDB**. Mencionó que dispone de varios entornos de desarrollo, así que no se fija Workbench como herramienta exclusiva.
+- Se revisó la puerta de control del Prompt Maestro: no producir el DDL hasta cerrar y aprobar el diseño físico E9–E11.
+- Se preparan E9 (diccionario de tipos y columnas), E10 (especificación física) y E11 (verificación previa). La versión instalada no se conoce; MariaDB 11.8.9 LTS queda como objetivo recomendado, no como instalación observada.
+- Los artefactos y estados fueron publicados con commits separados: [E5 aprobado](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/c5b7ac80e60b2e2352c7cf15674b30d460a275cf), [E6 3FN](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/64dd28780f22e88ab0f49cb7387876c1c0749b14), [E7](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/8de185057e8d774053df5a6a8173295242defdea), [E9](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/48bffd58c0167cad02028cd4a01dac2929de158a), [E10](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/d21520d131a73d05a611057e104e8422461e62f1) y [E11](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/12fef86ee66df948611885cb9281e224d93259a3).
+- Se consultó documentación oficial de MariaDB para restricciones, collation, fechas, comentarios y política LTS; se consultó el manual de MySQL Workbench para dejar clara la limitación de compatibilidad de cliente.
+- Se escogieron propuestas físicas conservadoras: InnoDB, `BIGINT UNSIGNED` en identificadores técnicos, `utf8mb4`, hora local de Bogotá en `DATETIME`, FKs restrictivas para conservar historial y sin valores por defecto de estado pendientes.
+- No se creó esquema, tabla, trigger, DDL, DML ni código Java y no se ejecutó SQL en servidor. El estado es **PROPUESTO / REVISADO ESTÁTICAMENTE**, no **PROBADO EN SGBD**.
+- Jira queda en pausa por decisión del usuario; esta bitácora y los commits del repositorio continúan como seguimiento activo.
+- Retomar leyendo E9–E11 y revisando los dominios/decisiones pendientes antes de aprobar Fase 3. Tras esa aprobación comienza la entrega DDL documentada; no cargar datos aún.
+
 ## Retoma de Fase 2 y publicación de E5–E8 (2026-11-14)
 
 - El usuario decidió dejar Jira en pausa y continuar con la fase lógica; no se modificaron boards ni tickets en esta sesión.
@@ -87,13 +107,14 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 
 ## Pendiente para la próxima sesión
 
-1. Revisar y aprobar/ajustar la propuesta E5–E8, especialmente los pendientes S01–S08 y la regla temporal D03.
-2. Actualizar Jira SCRUM-6 y SCRUM-7 con estado y comentario de esta sesión.
-3. Tras aprobación lógica, elegir SGBD antes de cualquier DDL (`SCRUM-8`).
-4. Completar HU-09 desde Jira UI: verificar conexión del repositorio, crear regla commit→En curso y probarla.
-5. Acordar capacidad/duración del próximo Sprint antes de planificar más trabajo.
+1. Revisar y aprobar/ajustar E9–E11 para MariaDB; leer los pendientes de tipos y dominios físicos.
+2. Responder P11-CR-01-Q1 para definir si los eventos corresponden a servicio, terminal/patio o ambos; luego cerrar Q2/Q3.
+3. Antes de escribir DDL, cotejar versión del servidor (`SELECT VERSION()`), disponibilidad de InnoDB y collation; no compartir credenciales.
+4. Tras aprobación de Fase 3, preparar DDL documentado y los artefactos de inventario, migración exclusivamente documental y mejoras no aplicadas.
+5. No generar datos sintéticos hasta que el DDL propuesto y documentado haya recibido su puerta de aprobación.
+6. Jira está en pausa por decisión del usuario; no requiere acción para continuar el proyecto.
 
 ## Punto de reanudación
 
-Abrir `docs/05_modelo_logico.md`, `docs/06_normalizacion.md`, `docs/07_diagrama_logico.md` y `docs/08_trazabilidad_logica.csv`; revisar la propuesta antes de la aprobación de Fase 2. `docs/01_analisis_semantico.md` conserva las decisiones y pendientes. No iniciar DDL antes de que el usuario apruebe el modelo lógico y elija SGBD.
+Abrir `docs/09_diccionario_fisico.csv`, `docs/10_especificacion_fisica.md` y `docs/11_verificacion_previa.md`; Fase 2 ya fue aprobada y MariaDB ya fue elegido. Revisar/aprobar Fase 3 y cotejar la versión instalada antes de DDL. `docs/05_modelo_logico.md`–`docs/08_trazabilidad_logica.csv` conservan el modelo aprobado y sus pendientes de implementación.
 
