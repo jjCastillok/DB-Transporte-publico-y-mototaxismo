@@ -8,6 +8,7 @@
 - Auditoría 2026-11-14: un board visible asociado al proyecto, `SCRUM board` (ID 1); columnas reales: `BD-TPM`, `En curso`, `Pruebas`, `Finalizado`. `BD-TPM` es el estado pendiente (categoría To Do), no un board adicional.
 - Conexión GitHub/Jira y regla de automatización de commits siguen sin verificación efectiva; no afirmar sincronización automática activa.
 - Decisión del usuario 2026-11-14: Jira queda en pausa y no se harán más cambios en tickets/tableros por ahora. La información previa se conserva como historial; el seguimiento activo se lleva en los documentos y commits del repositorio.
+- Solicitud nueva P11-CR-01: gestión de tickets/tokens para entrada y salida de vehículos y guía del código SQL MariaDB. La definición del evento está pendiente; no se creó SQL ni credenciales.
 
 ## Backlog trazable
 
@@ -16,7 +17,7 @@
 | HU-01 | [SCRUM-6](https://jjjk3022.atlassian.net/browse/SCRUM-6) | Cerrar decisiones conceptuales | **Finalizado**; aclaraciones recibidas y evidencias E1–E4 actualizadas. |
 | HU-02 | [SCRUM-7](https://jjjk3022.atlassian.net/browse/SCRUM-7) | Modelo lógico, integridad y demostración 3FN | **Fase 2 aprobada por el usuario el 2026-11-14**. Jira conserva su último estado observado; no se actualizó. |
 | HU-03 | [SCRUM-8](https://jjjk3022.atlassian.net/browse/SCRUM-8) | Elegir SGBD y diseño físico | MariaDB elegido; E9–E11 en propuesta. Versión instalada pendiente de cotejo y aprobación de Fase 3. |
-| HU-04 | [SCRUM-9](https://jjjk3022.atlassian.net/browse/SCRUM-9) | DDL documentado | Bloqueada por Fase 3, SGBD y aprobación. |
+| HU-04 | [SCRUM-9](https://jjjk3022.atlassian.net/browse/SCRUM-9) | DDL documentado | Fase 3 y DDL pendientes de aprobación; el cambio P11-CR-01 debe incorporarse antes de congelar el diseño. |
 | HU-05 | [SCRUM-10](https://jjjk3022.atlassian.net/browse/SCRUM-10) | DML sintético y privacidad | Después de aprobar DDL. |
 | HU-06 | [SCRUM-11](https://jjjk3022.atlassian.net/browse/SCRUM-11) | Consultas de operación y cobertura | Requiere modelo y datos de prueba aprobados. |
 | HU-07 | [SCRUM-12](https://jjjk3022.atlassian.net/browse/SCRUM-12) | POO básica en Java | Mantener simple; polimorfismo solo con variación real. |
