@@ -1,9 +1,9 @@
 # Análisis semántico P11
 
 **Proyecto:** Transporte público y mototaxismo: rutas, flota y cumplimiento  
-**Versión:** 0.2 — conceptual revisado con respuestas del usuario, 2026-11-14  
-**Estado:** Fase 1 aprobada anteriormente; decisiones Q01–Q03 incorporadas. El modelo lógico E5–E8 está en revisión y no aprobado.  
-**SGBD:** aún no elegido. **No se ha generado ni probado SQL.**
+**Versión:** 0.3 — conceptual y decisiones de modelo actualizados, 2026-11-14  
+**Estado:** Fase 1 y Fase 2 aprobadas por el usuario. Fase 3 física en elaboración; E9–E11 son propuesta revisable.  
+**SGBD elegido:** MariaDB. Versión instalada no verificada; se propone objetivo MariaDB 11.8.9 LTS. No se ha generado ni probado DDL.
 
 ## 1. Diagnóstico del problema
 
@@ -33,7 +33,7 @@ El sistema conservará información de empresas operadoras, vehículos y accesib
 | S01 | Supuesto | Empresa–vehículo | Un vehículo pertenece a una empresa operadora en un momento dado. | Aclarar si el cambio de empresa requiere historial de propiedad/operación. |
 | S02 | Supuesto | Terminales | Paradero y terminal son tipos de punto de servicio; un terminal puede servir como punto de transferencia dentro de una ruta. | Confirmar si todo terminal puede estar en la secuencia de ruta. |
 | S03 | Supuesto | Confirmación y evidencia | Guardar tipo de evidencia y una referencia no personal; no guardar el token/ticket completo ni datos del usuario. | Confirmar si la referencia debe ser auditable o basta tipo y fecha. |
-| S04 | Supuesto | Inspección | Usar vínculos diferenciados para vehículo, empresa y, opcionalmente, asignación. Una inspección puede tener uno o más objetivos. | Validar cómo se exigirá que cada inspección tenga objetivo y cómo se representa responsable. |
+| S04 | Supuesto | Inspección | Cada evento de inspección revisa un objetivo: vehículo, empresa o, opcionalmente, asignación. Se registra un evento por objetivo para que cada resultado tenga referente inequívoco. | Confirmar si una inspección puede agrupar varios vehículos/empresas; eso cambia el vínculo de los resultados. |
 | S05 | Supuesto | Sector de un punto | Cada punto de servicio se ubica en un sector. | Confirmar si un punto puede pertenecer a varios sectores. |
 | S06 | Supuesto | Cobertura | Un sector tiene cobertura dentro del periodo consultado si existe al menos una confirmación de servicio. | La ventana temporal debe ser indicada en cada consulta. |
 | S07 | Supuesto | Autorización | Un paradero habilitado se modela como dato de autorización distinto del orden en que aparece en una ruta. | Falta precisar si la habilitación es global, por ruta y/o temporal. |
@@ -88,3 +88,4 @@ La fuente primaria del alcance es el enunciado P11 pegado por el usuario y sus a
 - [ ] No se ha creado DDL, DML ni código Java.
 
 **Historial:** v0.1 conceptual aprobado; v0.2 (2026-11-14), incorpora D01–D03 y revisa la cobertura de planificada a confirmada. Consecuencia: se agrega confirmación de servicio por sector y las inspecciones se enlazan a objetivos identificados.
+
