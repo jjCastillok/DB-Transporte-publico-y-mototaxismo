@@ -1,9 +1,9 @@
 # E5 · Modelo lógico relacional P11
 
-**Versión:** 0.2 — propuesta lógica revisada, 2026-11-14  
-**Estado:** PROPUESTO; no aprobado por el usuario.  
+**Versión:** 0.3 — diseño lógico aprobado, 2026-11-14  
+**Estado:** APROBADO POR EL USUARIO para Fase 2; las decisiones de implementación señaladas como pendientes se conservan para su cierre antes del DDL.  
 **Origen:** modelo conceptual aprobado, revisado con D01–D03.  
-**SGBD:** no seleccionado. Esto es diseño lógico: no define tipos SQL ni crea código de implementación.
+**SGBD:** MariaDB seleccionado después de aprobar Fase 2. Este artefacto sigue siendo independiente del dialecto y no define tipos SQL ni crea código de implementación.
 
 ## Decisiones y criterios
 
