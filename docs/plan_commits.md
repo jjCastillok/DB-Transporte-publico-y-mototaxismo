@@ -68,6 +68,18 @@ Publicado en [commit 4145c18](https://github.com/jjCastillok/DB-Transporte-publi
 
 Publicado en [commit a4c926d](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/a4c926df13ba713cbc3ded2ab00b1f1edcff8c10).
 
+## Commit 10 — Refinar la propuesta lógica E5–E8
+
+**Mensaje:** `SCRUM-7 docs: refine logical model and 3NF evidence`
+
+**Archivos:** análisis y trazabilidad conceptual actualizados; modelo lógico E5, normalización E6, diagrama lógico E7, trazabilidad E8, Scrum y bitácora.
+
+**Alcance:** enlazar cada paso de ruta con el conjunto de paraderos habilitados, explicitar supuestos pendientes y revisar las dependencias funcionales. Estado PROPUESTO / REVISADO ESTÁTICAMENTE; la fase requiere aprobación y no contiene DDL ni pruebas de SGBD.
+
+Publicado en cuatro commits de alcance individual: [E5 modelo lógico](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/ddc4335d1a87d0be47c7d1cd509edbee0951a019), [E6 normalización](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/b819435d224fc2542a9000e1a8bc00b8bd8ae5a9), [E7 diagrama lógico](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/70e1193dc3bb80a86b9de6e3164030ae3645dafa) y [E8 trazabilidad](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/cd79122e8da70d245d525b3a7f900b9fb07c1a53).
+
+La Fase 2 continúa pendiente de aprobación del usuario. Jira queda en pausa por decisión del usuario; no se modificaron tableros ni tickets durante esta actualización.
+
 ## Archivos de referencia del curso
 
 La guía del proyecto y el ejemplo de P01 se conservarán como referencias locales. No se incluyen en los commits propuestos por ahora; el repositorio contendrá las decisiones y entregables de este proyecto y el Prompt Maestro.
@@ -78,3 +90,4 @@ La guía del proyecto y el ejemplo de P01 se conservarán como referencias local
 - Jira muestra GitHub for Atlassian instalado; conexión de este repositorio y regla automática de commits a `En curso` pendientes de verificación.
 - Los commits agrupados se publican con las herramientas de GitHub; no incluyen los documentos de referencia del curso.
 - El historial verificado también está enlazado en `docs/bitacora.md`.
+
