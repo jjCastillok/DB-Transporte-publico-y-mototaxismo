@@ -1,6 +1,6 @@
 # E7 · Diagrama lógico relacional P11
 
-**Versión:** 0.1 — propuesta  
+**Versión:** 0.2 — propuesta  
 **Estado:** PROPUESTO; editable como Markdown/Mermaid.  
 **Notación:** representación aproximada de pata de cuervo; no es Chen ni un DDL.
 
@@ -10,16 +10,13 @@ erDiagram
     SECTOR ||--o{ PUNTO_SERVICIO : contiene
     PUNTO_SERVICIO ||--o| PARADERO_HABILITADO : habilita
     RUTA ||--|{ PASO_RUTA : ordena
-    PUNTO_SERVICIO ||--o{ PASO_RUTA : aparece_en
+    PARADERO_HABILITADO ||--o{ PASO_RUTA : autorizado_en
     VEHICULO ||--o{ ASIGNACION : recibe
     RUTA ||--o{ ASIGNACION : atiende
     TURNO ||--o{ ASIGNACION : clasifica
-    INSPECCION ||--o{ INSPECCION_VEHICULO : tiene_objetivo
-    VEHICULO ||--o{ INSPECCION_VEHICULO : inspeccionado
-    INSPECCION ||--o{ INSPECCION_EMPRESA : tiene_objetivo
-    EMPRESA_OPERADORA ||--o{ INSPECCION_EMPRESA : inspeccionada
-    INSPECCION ||--o{ INSPECCION_ASIGNACION : tiene_objetivo_opcional
-    ASIGNACION ||--o{ INSPECCION_ASIGNACION : inspeccionada_opcional
+    VEHICULO ||--o{ INSPECCION : inspeccionado
+    EMPRESA_OPERADORA ||--o{ INSPECCION : inspeccionada
+    ASIGNACION o|--o{ INSPECCION : servicio_opcional
     INSPECCION ||--|{ EVALUACION_INSPECCION : evalua
     CONDICION ||--o{ EVALUACION_INSPECCION : se_revisa
     ASIGNACION ||--o{ CONFIRMACION_SERVICIO : confirma
@@ -78,18 +75,9 @@ erDiagram
         id_inspeccion PK
         fecha_hora
         responsable
-    }
-    INSPECCION_VEHICULO {
-        id_inspeccion PK_FK
-        id_vehiculo PK_FK
-    }
-    INSPECCION_EMPRESA {
-        id_inspeccion PK_FK
-        id_empresa PK_FK
-    }
-    INSPECCION_ASIGNACION {
-        id_inspeccion PK_FK
-        id_asignacion PK_FK
+        id_vehiculo FK_opcional
+        id_empresa FK_opcional
+        id_asignacion FK_opcional
     }
     CONDICION {
         id_condicion PK
@@ -121,14 +109,16 @@ erDiagram
 ## Lectura del modelo
 
 - Las tablas puente muestran las claves compuestas con `PK_FK`.
-- `PASO_RUTA` conserva ordinal y punto. Su FK a `ParaderoHabilitado` dependerá de resolver alcance/vigencia de habilitación; el diagrama muestra solo los enlaces esenciales.
+- `PASO_RUTA` conserva ordinal y referencia el conjunto `PARADERO_HABILITADO`; así se representa la regla RN02 bajo el supuesto de autorización global vigente.
 - `ConfirmacionServicio` no repite vehículo ni ruta: ambos se derivan de `Asignacion`.
-- La inspección debe tener al menos un objetivo entre sus tres relaciones objetivo. El diagrama por sí solo no expresa esa validación entre tablas.
+- Una sola de las tres FK objetivo de inspección debe estar informada (propuesta). El diagrama no muestra la regla de exclusividad.
 - La compatibilidad temporal de asignaciones tampoco se expresa en una relación; queda como RN01 para diseño físico.
 
 ## Checklist E7
 
 - [x] Relaciones, PK y FK principales visibles.
 - [x] Asociaciones M:N incluidas.
+- [x] La relación de cada paso de ruta con un paradero habilitado está representada.
 - [ ] Revisar habilitación de paraderos, asignación y la opcionalidad de objetivos de inspección.
 - [ ] Aprobar diagrama junto al resto de Fase 2.
+
