@@ -33,3 +33,10 @@ Los títulos de Jira incluyen el identificador `P11 HU-nn`; las descripciones co
 El repositorio es público y se agregó como enlace web al Epic. Jira muestra instalado GitHub for Atlassian, pero aún no se ha verificado que el repositorio esté conectado al proyecto ni que exista la automatización de commits. `SCRUM-14` queda en backlog para completar esa configuración y comprobarla con una clave Jira en un mensaje de commit.
 
 Convención prevista: `SCRUM-6 docs: close conceptual questions`. La clave del issue permite rastreo; el cambio automático de estado solo se afirmará después de activar y probar la regla.
+
+## Refinamiento del 2026-11-14
+
+- **SCRUM-6 / P11-HU-01:** Q01–Q03 respondidas: inspecciones principales a empresas/vehículos; `Sector` y cobertura por servicios confirmados con evidencia; simultaneidad con excepción durante finalización/finalizada. Documentos conceptuales revisados. El ticket tiene que dejar de indicar que espera esas respuestas y registrar que se solicita validar el modelo lógico.
+- **SCRUM-7 / P11-HU-02:** preparados E5–E8 en borrador, incluida demostración de 3FN por dependencias funcionales, modelo relacional, diagrama y trazabilidad. La fase está PROPUESTA, no aprobada; pendientes temporales, habilitación y definiciones de consulta.
+- No se movió SCRUM-7 al Sprint activo sin conocer capacidad. No se eligió SGBD ni se creó SQL/DDL.
+- Los comentarios Jira deben incluir qué se hizo, qué sigue y la versión documental correspondiente.

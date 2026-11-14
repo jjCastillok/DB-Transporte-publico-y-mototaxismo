@@ -1,60 +1,48 @@
-# Scrum del proyecto
+# Scrum del proyecto P11
 
 ## Herramienta y enlaces
 
-- Herramienta: Jira.
-- Proyecto: `SCRUM` — Administración de mis proyectos.
-- Tablero: [SCRUM board](https://jjjk3022.atlassian.net/jira/software/c/projects/SCRUM/boards/1).
-- Repositorio: [jjCastillok/DB-Transporte-publico-y-mototaxismo](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo).
-- Columnas del tablero: `Idea`, `En curso`, `Pruebas`, `Finalizado`.
-- No se modificaron tickets genéricos preexistentes.
+- Jira: proyecto `SCRUM`; [tablero](https://jjjk3022.atlassian.net/jira/software/c/projects/SCRUM/boards/1).
+- Repositorio público: [jjCastillok/DB-Transporte-publico-y-mototaxismo](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo).
+- Épico: [SCRUM-5 — P11](https://jjjk3022.atlassian.net/browse/SCRUM-5).
+- Estados del tablero observados: Idea, En curso, Pruebas, Finalizado.
+- Conexión GitHub/Jira y regla de automatización de commits siguen sin verificación efectiva; no afirmar sincronización automática activa.
 
-## Épico e historias
+## Backlog trazable
 
-Épico P11: [SCRUM-5](https://jjjk3022.atlassian.net/browse/SCRUM-5). Enlaza el repositorio.
-
-| ID | Jira | Historia / resultado | Estado / ubicación |
+| ID | Ticket | Alcance | Estado documentado / siguiente paso |
 |---|---|---|---|
-| HU-01 | [SCRUM-6](https://jjjk3022.atlassian.net/browse/SCRUM-6) | Aclarar decisiones abiertas del alcance conceptual (Q01–Q03). | Sprint 0 activo; Idea |
-| HU-02 | [SCRUM-7](https://jjjk3022.atlassian.net/browse/SCRUM-7) | Diseñar el modelo lógico relacional normalizado. | Backlog; depende de aprobación conceptual |
-| HU-03 | [SCRUM-8](https://jjjk3022.atlassian.net/browse/SCRUM-8) | Seleccionar SGBD y documentar diseño físico. | Backlog; depende de aprobación lógica |
-| HU-04 | [SCRUM-9](https://jjjk3022.atlassian.net/browse/SCRUM-9) | Preparar DDL básico y documentado. | Backlog; depende del diseño físico |
-| HU-05 | [SCRUM-10](https://jjjk3022.atlassian.net/browse/SCRUM-10) | Preparar datos sintéticos y controles de privacidad. | Backlog; depende del DDL aprobado |
-| HU-06 | [SCRUM-11](https://jjjk3022.atlassian.net/browse/SCRUM-11) | Documentar consultas de operación y cobertura. | Backlog; requiere esquema y datos sintéticos |
-| HU-07 | [SCRUM-12](https://jjjk3022.atlassian.net/browse/SCRUM-12) | Modelar conceptos seleccionados en Java con POO básica. | Backlog; confirmar alcance académico |
-| HU-08 | [SCRUM-13](https://jjjk3022.atlassian.net/browse/SCRUM-13) | Auditar trazabilidad y preparar entrega final. | Backlog |
-| HU-09 | [SCRUM-14](https://jjjk3022.atlassian.net/browse/SCRUM-14) | Vincular commits GitHub con incidencias Jira. | Backlog; conexión/regla por completar |
+| HU-01 | [SCRUM-6](https://jjjk3022.atlassian.net/browse/SCRUM-6) | Cerrar decisiones conceptuales | Respuestas Q01–Q03 recibidas; evidencias revisadas; pedir visto bueno conceptual/lógico. Jira aún muestra Idea hasta actualizarlo. |
+| HU-02 | [SCRUM-7](https://jjjk3022.atlassian.net/browse/SCRUM-7) | Modelo lógico, integridad y demostración 3FN | E5–E8 propuestos; pendientes decisiones de frontera y aprobación. |
+| HU-03 | [SCRUM-8](https://jjjk3022.atlassian.net/browse/SCRUM-8) | Elegir SGBD y diseño físico | Solo después de aprobar Fase 2. |
+| HU-04 | [SCRUM-9](https://jjjk3022.atlassian.net/browse/SCRUM-9) | DDL documentado | Bloqueada por Fase 3, SGBD y aprobación. |
+| HU-05 | [SCRUM-10](https://jjjk3022.atlassian.net/browse/SCRUM-10) | DML sintético y privacidad | Después de aprobar DDL. |
+| HU-06 | [SCRUM-11](https://jjjk3022.atlassian.net/browse/SCRUM-11) | Consultas de operación y cobertura | Requiere modelo y datos de prueba aprobados. |
+| HU-07 | [SCRUM-12](https://jjjk3022.atlassian.net/browse/SCRUM-12) | POO básica en Java | Mantener simple; polimorfismo solo con variación real. |
+| HU-08 | [SCRUM-13](https://jjjk3022.atlassian.net/browse/SCRUM-13) | Auditoría y sustentación | Cierre final. |
+| HU-09 | [SCRUM-14](https://jjjk3022.atlassian.net/browse/SCRUM-14) | Conexión y automatización GitHub/Jira | Jira UI debe confirmar conexión y regla de commit→En curso. |
 
-Cada historia tiene un resumen identificable (`P11 HU-nn`), criterios de aceptación y comentario inicial de seguimiento.
+Cada ticket usa identificador `P11-HU-nn`, describe propósito, hecho, estado, siguiente paso, criterios y dependencias. Los comentarios Jira conservan el historial de decisiones.
 
-## Seguimiento de tickets
+## Sprint y capacidad
 
-El Epic y las nueve historias tienen ahora una sección `Seguimiento P11` en la descripción con:
+`SCRUM Sprint 0` (ID 2) fue observado activo con fechas 10–24 nov 2026, hora Bogotá. HU-01 ya estaba asociada. No se cambian sprint ni estimaciones sin conocer la disponibilidad del equipo. La configuración real del tablero y su estado actual deben volver a verificarse al iniciar trabajo.
 
-- Identificador (`P11-EPIC`, `P11-HU-01`…`P11-HU-09`).
-- Propósito del ticket.
-- Qué se ha hecho hasta ahora, sin confundir preparación con pruebas ejecutadas.
-- Estado/ubicación en Jira.
-- Próximo paso y dependencias o bloqueos.
+## Update del 2026-11-14
 
-También se añadió un comentario de actualización fechado 2026-11-10 en cada ticket para conservar el historial de seguimiento. HU-01 sigue en Sprint 0 con estado Jira `Idea`; HU-02–HU-09 permanecen en backlog. La conexión GitHub–Jira y su automatización siguen pendientes de verificación.
+- El usuario precisó inspecciones a empresas/vehículos, permitiendo como opción secundaria inspección de servicio.
+- Se usará **Sector**. Cobertura se deriva de confirmación de servicios por vehículo con evidencia tipo token/ticket (app o impreso).
+- Se permite simultaneidad bajo condición de finalizando/finalizada; la regla exacta de intervalo aún requiere precisión para implementación.
+- Se generaron borradores lógicos E5–E8 con análisis explícito de 1FN, 2FN y 3FN.
+- Jira debe actualizarse con las respuestas y enlazarse a este estado; no se movieron HU-02 al sprint activo ni a En curso porque falta la aprobación de fase y no se conoce capacidad.
 
-## Sprint activo
+## Integración de commits
 
-`SCRUM Sprint 0` (ID 2) ya estaba activo al iniciar esta gestión, del 10 nov 2026 22:26 al 24 nov 2026 22:26 en hora de Bogotá (Jira guarda las marcas equivalentes en UTC). No se reinició ni se alteraron fechas. Se añadió únicamente `SCRUM-6`, para trabajar las preguntas pendientes primero. No se marcó `En curso` porque aún no hay respuestas del usuario.
+Convención: `SCRUM-7 docs: draft logical model`. La clave permite vincular el commit manualmente. El cambio automático de estado solo se considera activo tras conectar el repo, crear la regla y observar una prueba real. Jira UI es necesaria para configurar la automatización; la API conectada no expone la administración de reglas.
 
-**Objetivo operativo:** cerrar las decisiones conceptuales antes de iniciar el modelo lógico. Las demás historias quedan en backlog por depender de aprobaciones o entregables previos.
+## Retomar el trabajo
 
-## Automatización y commits
-
-- Convención de commit: referenciar una clave, por ejemplo `SCRUM-6 docs: close conceptual questions`.
-- Jira muestra GitHub for Atlassian instalado; la instalación no demuestra por sí sola que este repositorio ya esté conectado.
-- Falta verificar la conexión al repositorio y crear/probar una regla que, al detectar un commit con clave `SCRUM-n`, cambie la incidencia a `En curso`.
-- La API Jira conectada no expone gestión de reglas de automatización. HU-09 registra esta tarea pendiente de completar en Jira UI.
-
-## Acuerdos para continuar
-
-- Respetar las fases y puertas de aprobación de `Text_Prompt_Maestro.txt`.
-- Mantener nombres, clases y métodos sencillos; introducir polimorfismo solo si aporta variación real.
-- Registrar decisiones y cambios en `docs/bitacora.md`.
-- No asumir estimaciones, asignaciones, duración futura de Sprint ni respuestas a Q01–Q03.
+1. Revisar E5–E8 en el repositorio y aprobar o ajustar pendientes.
+2. Si se aprueba Fase 2, responder la pregunta obligatoria del SGBD; no crear antes SQL.
+3. Registrar la decisión en bitácora, actualizar SCRUM-6/7 y conservar un commit por alcance.
+4. Más adelante, retomar SCRUM-14 desde Jira UI para completar integración y regla automática.

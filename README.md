@@ -26,6 +26,10 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - [Diagrama conceptual Chen — texto](docs/03_diagrama_conceptual.md)
 - [Trazabilidad conceptual — CSV](docs/04_trazabilidad_conceptual.csv)
 - [Diagrama Chen editable](docs/03_diagrama_conceptual.drawio)
+- [Modelo lógico relacional — E5](docs/05_modelo_logico.md)
+- [Normalización hasta 3FN — E6](docs/06_normalizacion.md)
+- [Diagrama lógico — E7](docs/07_diagrama_logico.md)
+- [Trazabilidad lógica — E8](docs/08_trazabilidad_logica.csv)
 - [Plan de commits](docs/plan_commits.md)
 - [Propuesta de backlog Jira](docs/backlog_jira_propuesta.md)
 - [Vinculación y automatización Jira–GitHub](docs/automatizacion_jira.md)
@@ -33,7 +37,7 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 
 ## Decisiones por confirmar
 
-- Respuestas a Q01–Q03 para cerrar decisiones conceptuales pendientes.
+- Revisión y aprobación del diseño lógico E5–E8, incluidos los supuestos temporales y de habilitación aún listados en `docs/01_analisis_semantico.md`.
 - Motor y versión del sistema gestor.
 - Integrantes, duración de Sprint y fechas de entrega.
 - Confirmar acceso del conector GitHub for Atlassian al repositorio e implementar la regla de automatización en Jira.
@@ -46,6 +50,11 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - Repositorio GitHub público: [DB-Transporte-publico-y-mototaxismo](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo).
 - Sprint 0 ya activo; solo HU-01 se añadió para atender primero las decisiones abiertas.
 
+## Estado del diseño
+
+Las decisiones sobre inspecciones, cobertura por Sector y simultaneidad fueron recibidas el 14 nov 2026. La revisión de 3FN estática se documenta en E6. El modelo lógico está propuesto y aún requiere aprobación; no se ha elegido SGBD y no se han generado scripts SQL ni código Java.
+
 ## Criterio de implementación
 
 Se preferirán nombres claros, clases y métodos pequeños, SQL legible y funciones que se puedan explicar. Se incorporará polimorfismo donde resuelva una variación real del problema, sin añadir capas ni patrones innecesarios. No se escribirá código definitivo antes de revisar el enunciado y aprobar el diseño correspondiente.
+

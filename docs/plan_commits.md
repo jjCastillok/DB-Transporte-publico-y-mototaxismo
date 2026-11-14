@@ -48,6 +48,14 @@ Archivos: bitácora y plan de commits.
 
 Cada fase aprobada tendrá uno o más commits con un alcance pequeño, mensaje que describa el cambio y una clave Jira. Ejemplo: `SCRUM-6 docs: close conceptual questions`. No marcar una historia como iniciada por la mera presencia de una clave hasta que la automatización se configure y compruebe.
 
+## Commit 8 — Decisiones P11 y propuesta lógica
+
+**Mensaje:** `SCRUM-7 docs: draft normalized logical model`
+
+**Archivos:** análisis y evidencias conceptuales revisadas, modelo lógico E5, normalización E6, diagrama relacional E7, trazabilidad E8, seguimiento Scrum y bitácora.
+
+**Estado:** documentos preparados y REVISADOS ESTÁTICAMENTE; Fase 2 pendiente de aprobación del usuario. Sin SGBD, SQL/DDL, datos sintéticos ni pruebas.
+
 ## Archivos de referencia del curso
 
 La guía del proyecto y el ejemplo de P01 se conservarán como referencias locales. No se incluyen en los commits propuestos por ahora; el repositorio contendrá las decisiones y entregables de este proyecto y el Prompt Maestro.
