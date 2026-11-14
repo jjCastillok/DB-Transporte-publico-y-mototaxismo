@@ -1,7 +1,7 @@
 # E6 · Normalización hasta tercera forma normal
 
-**Versión:** 0.2 — revisión estática del modelo lógico propuesto.  
-**Estado:** REVISADO ESTÁTICAMENTE; sujeto a aprobación del modelo. No probado en SGBD.
+**Versión:** 0.3 — revisión estática del modelo lógico aprobado.  
+**Estado:** REVISADO ESTÁTICAMENTE y aprobado como evidencia de Fase 2 por el usuario el 2026-11-14. No probado en SGBD.
 
 ## Respuesta a la pregunta de 3FN
 
