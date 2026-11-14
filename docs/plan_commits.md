@@ -102,7 +102,7 @@ Publicado por archivos con mensajes de alcance específico: [E5 aprobado](https:
 
 **Alcance:** documentar la solicitud de tickets/tokens para entrada/salida y explicar cómo se organizará el código SQL en MariaDB. El significado de entrada/salida aún debe confirmarse; no incluye DDL ni credenciales.
 
-Publicado en commits separados: [guía de gestión del código](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/03949eb6efd6d5569cc261602d085b2c2672bbc6), [solicitud de cambio P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/87e19046efbac4cfcf3bcd94f0d9d721a53eec6e), [README](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/776d7c22f79baaa3f7570a980b11dd187663c050) y [Scrum](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/fbbda145d28b6b11e365628ab5d12005290234f9).
+Publicado en commits separados: [guía de gestión del código](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/03949eb6efd6d5569cc261602d085b2c2672bbc6), [solicitud de cambio P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/87e19046efbac4cfcf3bcd94f0d9d721a53eec6e), [README](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/776d7c22f79baaa3f7570a980b11dd187663c050), [Scrum](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/fbbda145d28b6b11e365628ab5d12005290234f9) y [bitácora](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/7c70cebdf73f56ba284a3a9522433a97ab23823e).
 
 ## Archivos de referencia del curso
 
