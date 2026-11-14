@@ -56,6 +56,8 @@ Cada fase aprobada tendrá uno o más commits con un alcance pequeño, mensaje q
 
 **Estado:** documentos preparados y REVISADOS ESTÁTICAMENTE; Fase 2 pendiente de aprobación del usuario. Sin SGBD, SQL/DDL, datos sintéticos ni pruebas.
 
+Publicado en [commit 4145c18](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/4145c1820fede67ecce237eb9749fbb57bd55ede) el 2026-11-14.
+
 ## Archivos de referencia del curso
 
 La guía del proyecto y el ejemplo de P01 se conservarán como referencias locales. No se incluyen en los commits propuestos por ahora; el repositorio contendrá las decisiones y entregables de este proyecto y el Prompt Maestro.

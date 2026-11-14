@@ -9,6 +9,7 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - El usuario permite simultaneidad cuando el vehículo está finalizando o ya finalizó una asignación. La frontera temporal exacta sigue abierta; no se codifica como restricción física hasta que se defina.
 - Se atendió la pregunta de 3FN: es un requisito y se preparó una justificación estática con dependencias funcionales en E6. No se afirma prueba de base de datos.
 - Se corrigieron E1–E4 y se redactaron E5–E8 (modelo lógico, normalización, diagrama y trazabilidad) como **PROPUESTO / REVISADO ESTÁTICAMENTE**. El usuario debe revisar y aprobar la fase lógica.
+- Publicación GitHub: [SCRUM-7 docs: draft normalized logical model](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/4145c1820fede67ecce237eb9749fbb57bd55ede), con análisis, modelo lógico, evidencias, Scrum y README.
 - No se eligió SGBD y no se generó DDL, DML, SQL de scripts ni código Java. La fase física/implementación no ha comenzado.
 - Preguntas que podrían cambiar el modelo antes de aprobarlo: habilitación global o por ruta/vigencia; significado de estado `FINALIZANDO`; cobertura individual por paradero además de sector; activo de flota y regla de cumplimiento empresarial; referencia de evidencia sin dato personal; historia del cambio de empresa del vehículo.
 - Jira se actualizará para quitar el mensaje obsoleto de “esperando Q01–Q03” y enlazar el borrador lógico.
@@ -65,4 +66,3 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 ## Punto de reanudación
 
 Abrir `docs/05_modelo_logico.md`, `docs/06_normalizacion.md`, `docs/07_diagrama_logico.md` y `docs/08_trazabilidad_logica.csv`; revisar la propuesta antes de la aprobación de Fase 2. `docs/01_analisis_semantico.md` conserva las decisiones y pendientes. No iniciar DDL antes de que el usuario apruebe el modelo lógico y elija SGBD.
-
