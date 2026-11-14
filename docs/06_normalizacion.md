@@ -1,6 +1,6 @@
 # E6 · Normalización hasta tercera forma normal
 
-**Versión:** 0.1 — revisión estática del modelo lógico propuesto.  
+**Versión:** 0.2 — revisión estática del modelo lógico propuesto.  
 **Estado:** REVISADO ESTÁTICAMENTE; sujeto a aprobación del modelo. No probado en SGBD.
 
 ## Respuesta a la pregunta de 3FN
@@ -17,10 +17,7 @@ En relaciones con clave compuesta, los datos no clave dependen de toda la clave:
 
 | Relación | Clave | Dependencia relevante |
 |---|---|---|
-| PasoRuta | `(id_ruta, orden)` | La clave completa determina `id_punto`. Ni ruta ni orden aisladamente determinan todos los datos del paso. |
-| InspeccionVehiculo | `(id_inspeccion, id_vehiculo)` | El vínculo existe por el par; no se copian nombres ni atributos del vehículo/inspección. |
-| InspeccionEmpresa | `(id_inspeccion, id_empresa)` | El vínculo existe por el par; no se copian nombre de empresa o datos de inspección. |
-| InspeccionAsignacion | `(id_inspeccion, id_asignacion)` | El vínculo existe por el par; no se copian ruta, vehículo ni fecha. |
+| PasoRuta | `(id_ruta, orden)` | La clave completa determina `id_punto`. Ni ruta ni orden aisladamente determinan todos los datos del paso. El punto referencia al conjunto habilitado por FK, no repite atributos del paradero. |
 | EvaluacionInspeccion | `(id_inspeccion, id_condicion)` | El resultado depende de la condición evaluada en esa inspección, no solo de uno de los componentes. |
 | ReporteIlegalSectorPeriodo | `(id_sector, periodo_inicio, periodo_fin)` | `total` depende del sector y del periodo completo. |
 
@@ -35,16 +32,13 @@ Se usan identificadores conceptuales como claves primarias. Atributos naturales 
 | EmpresaOperadora | `id_empresa → nombre, datos_operativos` | Los datos propios dependen de la clave de empresa. |
 | Vehiculo | `id_vehiculo → id_empresa, capacidad, accesible, caracteristicas` | La empresa se guarda como FK; no se repiten nombre/datos de empresa. |
 | Sector | `id_sector → nombre/codigo` | Denominación depende de la clave del sector. |
-| PuntoServicio | `id_punto → id_sector, tipo, nombre, ubicacion` | Se almacena FK sector; no se duplica nombre del sector. |
-| ParaderoHabilitado | `id_punto → datos_habilitacion` | La habilitación depende del punto referenciado, bajo el supuesto global pendiente. |
+| PuntoServicio | `id_punto → id_sector, tipo, nombre, ubicacion` | Se almacena FK sector; no se duplica nombre del sector (S05: un sector por punto). |
+| ParaderoHabilitado | `id_punto → datos_habilitacion` | La habilitación depende de la clave de punto, bajo el supuesto de habilitación global vigente (S07). |
 | Ruta | `id_ruta → codigo/nombre, descripcion` | Datos descriptivos dependen de ruta. |
-| PasoRuta | `(id_ruta, orden) → id_punto` | No se copian descripción de ruta, ubicación o atributos del punto. |
+| PasoRuta | `(id_ruta, orden) → id_punto` | No se copian descripción de ruta, ubicación ni datos del paradero; el FK de `id_punto` apunta al conjunto autorizado. |
 | Turno | `id_turno → nombre` | El nombre depende del identificador de turno. |
 | Asignacion | `id_asignacion → id_vehiculo, id_ruta, id_turno, inicio, fin_programado, estado, fin_real` | No se repiten nombres/códigos de sus entidades relacionadas. |
-| Inspeccion | `id_inspeccion → fecha_hora, responsable` | Encabezado común; no repite atributos del objetivo ni un resumen redundante de evaluaciones. |
-| InspeccionVehiculo | `(id_inspeccion, id_vehiculo) → —` | Asociación sin atributos transitivos duplicados. |
-| InspeccionEmpresa | `(id_inspeccion, id_empresa) → —` | Asociación sin atributos transitivos duplicados. |
-| InspeccionAsignacion | `(id_inspeccion, id_asignacion) → —` | Asociación sin atributos transitivos duplicados. |
+| Inspeccion | `id_inspeccion → fecha_hora, responsable, id_vehiculo?, id_empresa?, id_asignacion?` | Las FK determinan el objetivo por referencia; una regla de exclusividad exige una sola FK informada. |
 | Condicion | `id_condicion → nombre, categoria` | La descripción de condición vive solo en catálogo. |
 | EvaluacionInspeccion | `(id_inspeccion, id_condicion) → resultado, observacion` | El resultado depende de la evaluación completa; no se copia nombre de condición. |
 | ConfirmacionServicio | `id_confirmacion → id_asignacion, id_sector, fecha_hora, tipo_evidencia, referencia` | Empresa/vehículo/ruta se obtienen por asignación; no se almacenan como copias. |
@@ -62,10 +56,12 @@ En cada fila, los atributos no clave dependen de la clave, de toda la clave cuan
 ## Límites de esta comprobación
 
 1. “Características de accesibilidad” puede ser multivaluada. Si el usuario necesita registrar más de una característica independiente por vehículo, se propondrá un catálogo y una relación M:N; no se comprimirá en texto delimitado.
-2. El responsable de inspección puede requerir una entidad/identificador con acceso protegido, pero no se registrarán datos personales de conductores.
-3. La vigencia de habilitación y los cambios de operador pueden añadir historial y nuevas claves; deben quedar definidos antes de cerrar Fase 2.
-4. La regla de solapamiento es temporal y no se demuestra por normalización; exige una restricción o validación física posterior.
-5. No se proponen desnormalizaciones.
+2. Se supone un solo objetivo por evento de inspección para que los resultados por condición sean inequívocos. Si se agrupan varios objetivos, la evaluación deberá apuntar al objetivo concreto y cambiaría la relación propuesta.
+3. El responsable de inspección puede requerir una referencia protegida; no se registran datos personales de conductores.
+4. Si la autorización de paraderos es por ruta o debe conservar cambios de vigencia, habrá que añadir esa dimensión al vínculo lógico; el borrador actual la toma como global y vigente.
+5. Los cambios de empresa operadora pueden requerir historial adicional si el usuario los considera parte del alcance.
+6. La regla de solapamiento es temporal y no se demuestra por normalización; exige una restricción o validación física posterior.
+7. No se proponen desnormalizaciones.
 
 ## Checklist E6
 
@@ -73,6 +69,7 @@ En cada fila, los atributos no clave dependen de la clave, de toda la clave cuan
 - [x] Dependencias funcionales relevantes anotadas.
 - [x] Atributos descriptivos no se duplican en relaciones.
 - [x] Limitaciones y decisiones que podrían cambiar la forma del modelo declaradas.
+- [x] Se verificó que `PasoRuta` depende de su clave compuesta y apunta al conjunto de puntos habilitados.
 - [ ] Revisión y aprobación del usuario.
 - [ ] No existe prueba en servidor ni evidencia de ejecución SQL.
 
