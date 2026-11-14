@@ -66,6 +66,8 @@ Publicado en [commit 4145c18](https://github.com/jjCastillok/DB-Transporte-publi
 
 **Alcance:** registrar que Jira presenta un único board visible con cuatro estados, SCRUM-6 finalizado y SCRUM-7 en curso dentro de Sprint 0. La columna Pruebas queda sin P11 hasta que existan pruebas documentadas.
 
+Publicado en [commit a4c926d](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/a4c926df13ba713cbc3ded2ab00b1f1edcff8c10).
+
 ## Archivos de referencia del curso
 
 La guía del proyecto y el ejemplo de P01 se conservarán como referencias locales. No se incluyen en los commits propuestos por ahora; el repositorio contendrá las decisiones y entregables de este proyecto y el Prompt Maestro.

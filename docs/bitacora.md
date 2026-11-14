@@ -4,6 +4,7 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 
 ## Auditoría de Jira boards y organización del flujo (2026-11-14)
 
+- Publicación de la organización Jira y del historial: [commit a4c926d](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/a4c926df13ba713cbc3ded2ab00b1f1edcff8c10).
 - Se revisó el listado de boards visibles en el sitio Jira y los vinculados al proyecto SCRUM. Resultado: un solo board visible asociado al proyecto, `SCRUM board` (ID 1), dentro del proyecto SCRUM.
 - El board tiene cuatro columnas/estados: `BD-TPM` (pendiente/To Do), `En curso`, `Pruebas` y `Finalizado`. `BD-TPM` es el estado inicial y no un board adicional.
 - Se consultaron los tickets P11 y el Sprint 0 activo (ID 2). Los tickets estaban inicialmente en BD-TPM; SCRUM-6 ya estaba en el sprint.
