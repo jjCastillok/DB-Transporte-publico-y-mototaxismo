@@ -1,7 +1,7 @@
 # E7 · Diagrama lógico relacional P11
 
-**Versión:** 0.2 — propuesta  
-**Estado:** PROPUESTO; editable como Markdown/Mermaid.  
+**Versión:** 0.3 — diseño lógico aprobado, 2026-11-14  
+**Estado:** APROBADO POR EL USUARIO como evidencia de Fase 2; editable como Markdown/Mermaid.  
 **Notación:** representación aproximada de pata de cuervo; no es Chen ni un DDL.
 
 ```mermaid
