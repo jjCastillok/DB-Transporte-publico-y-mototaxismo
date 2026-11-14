@@ -2,6 +2,17 @@
 
 Registro cronológico para saber qué se hizo, qué falta y cómo retomar el proyecto.
 
+## Auditoría de Jira boards y organización del flujo (2026-11-14)
+
+- Se revisó el listado de boards visibles en el sitio Jira y los vinculados al proyecto SCRUM. Resultado: un solo board visible asociado al proyecto, `SCRUM board` (ID 1), dentro del proyecto SCRUM.
+- El board tiene cuatro columnas/estados: `BD-TPM` (pendiente/To Do), `En curso`, `Pruebas` y `Finalizado`. `BD-TPM` es el estado inicial y no un board adicional.
+- Se consultaron los tickets P11 y el Sprint 0 activo (ID 2). Los tickets estaban inicialmente en BD-TPM; SCRUM-6 ya estaba en el sprint.
+- Se movió `SCRUM-6` / HU-01 a `Finalizado`: respuestas del usuario y actualización E1–E4 completadas.
+- Se movió `SCRUM-7` / HU-02 a `En curso` y se agregó al Sprint 0: trabajo de E5–E8 iniciado, todavía propuesto y pendiente de aprobación.
+- `SCRUM-8`–`SCRUM-14` permanecen en BD-TPM por dependencias. Ningún P11 está en `Pruebas`: no existe SGBD/DDL aprobado ni evidencia de prueba real.
+- Se actualizaron el Epic y las descripciones/comentarios de SCRUM-6/SCRUM-7. No se tocaron tickets genéricos.
+- Para retomar: abrir SCRUM-7 en En curso y revisar E5–E8. No avanzar tickets a Pruebas sin una implementación aprobada y evidencia verificable.
+
 ## Actualización — aclaraciones y diseño lógico (2026-11-14)
 
 - El usuario confirmó que las inspecciones se realizan principalmente a vehículos y empresas; una inspección de servicio/asignación también se puede almacenar, pero es secundaria.
@@ -12,7 +23,7 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - Publicación GitHub: [SCRUM-7 docs: draft normalized logical model](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/4145c1820fede67ecce237eb9749fbb57bd55ede), con análisis, modelo lógico, evidencias, Scrum y README.
 - No se eligió SGBD y no se generó DDL, DML, SQL de scripts ni código Java. La fase física/implementación no ha comenzado.
 - Preguntas que podrían cambiar el modelo antes de aprobarlo: habilitación global o por ruta/vigencia; significado de estado `FINALIZANDO`; cobertura individual por paradero además de sector; activo de flota y regla de cumplimiento empresarial; referencia de evidencia sin dato personal; historia del cambio de empresa del vehículo.
-- Jira se actualizará para quitar el mensaje obsoleto de “esperando Q01–Q03” y enlazar el borrador lógico.
+- Jira se actualizó para quitar el mensaje obsoleto de “esperando Q01–Q03” y enlazar el borrador lógico.
 - Próximo paso: revisar E5–E8 y responder aprobación o ajustes. Después de aprobar, la siguiente pregunta será únicamente la selección del SGBD, según `Text_Prompt_Maestro.txt`.
 
 ## Actualización — Jira y GitHub (2026-11-10)

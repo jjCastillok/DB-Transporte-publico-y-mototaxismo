@@ -58,6 +58,14 @@ Cada fase aprobada tendrá uno o más commits con un alcance pequeño, mensaje q
 
 Publicado en [commit 4145c18](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/4145c1820fede67ecce237eb9749fbb57bd55ede) el 2026-11-14.
 
+## Commit 9 — Organizar columnas del board Jira
+
+**Mensaje:** `SCRUM-5 docs: map Jira board columns and work status`
+
+**Archivos:** `README.md`, `docs/scrum.md`, `docs/backlog_jira_propuesta.md`, `docs/bitacora.md` y este plan.
+
+**Alcance:** registrar que Jira presenta un único board visible con cuatro estados, SCRUM-6 finalizado y SCRUM-7 en curso dentro de Sprint 0. La columna Pruebas queda sin P11 hasta que existan pruebas documentadas.
+
 ## Archivos de referencia del curso
 
 La guía del proyecto y el ejemplo de P01 se conservarán como referencias locales. No se incluyen en los commits propuestos por ahora; el repositorio contendrá las decisiones y entregables de este proyecto y el Prompt Maestro.

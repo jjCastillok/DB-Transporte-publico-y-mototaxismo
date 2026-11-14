@@ -48,7 +48,7 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - Markdown durante el trabajo y Word al final.
 - Scrum en Jira, en el tablero existente `SCRUM board` del proyecto `SCRUM`; épico e historias P11 ya creados.
 - Repositorio GitHub público: [DB-Transporte-publico-y-mototaxismo](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo).
-- Sprint 0 ya activo; solo HU-01 se añadió para atender primero las decisiones abiertas.
+- Sprint 0 activo: HU-01 está Finalizada y HU-02 está En curso. Jira tiene un board visible con columnas BD-TPM, En curso, Pruebas y Finalizado; ver [Scrum](docs/scrum.md).
 
 ## Estado del diseño
 
@@ -57,4 +57,3 @@ Las decisiones sobre inspecciones, cobertura por Sector y simultaneidad fueron r
 ## Criterio de implementación
 
 Se preferirán nombres claros, clases y métodos pequeños, SQL legible y funciones que se puedan explicar. Se incorporará polimorfismo donde resuelva una variación real del problema, sin añadir capas ni patrones innecesarios. No se escribirá código definitivo antes de revisar el enunciado y aprobar el diseño correspondiente.
-

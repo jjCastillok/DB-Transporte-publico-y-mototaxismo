@@ -36,7 +36,9 @@ Convención prevista: `SCRUM-6 docs: close conceptual questions`. La clave del i
 
 ## Refinamiento del 2026-11-14
 
-- **SCRUM-6 / P11-HU-01:** Q01–Q03 respondidas: inspecciones principales a empresas/vehículos; `Sector` y cobertura por servicios confirmados con evidencia; simultaneidad con excepción durante finalización/finalizada. Documentos conceptuales revisados. El ticket tiene que dejar de indicar que espera esas respuestas y registrar que se solicita validar el modelo lógico.
-- **SCRUM-7 / P11-HU-02:** preparados E5–E8 en borrador, incluida demostración de 3FN por dependencias funcionales, modelo relacional, diagrama y trazabilidad. La fase está PROPUESTA, no aprobada; pendientes temporales, habilitación y definiciones de consulta.
-- No se movió SCRUM-7 al Sprint activo sin conocer capacidad. No se eligió SGBD ni se creó SQL/DDL.
+- Auditoría de boards: Jira devuelve un board visible asociado al proyecto, `SCRUM board` (ID 1), con las columnas `BD-TPM`, `En curso`, `Pruebas` y `Finalizado`. `BD-TPM` es el estado inicial, no un board.
+- **SCRUM-6 / P11-HU-01:** Q01–Q03 respondidas; evidencias conceptuales actualizadas; se movió a `Finalizado`.
+- **SCRUM-7 / P11-HU-02:** E5–E8 preparados en borrador con análisis estático de 3FN; se movió a `En curso` y Sprint 0 (ID 2). Fase 2 aún requiere aprobación.
+- **Pruebas:** sin tickets P11; SGBD y DDL siguen pendientes, así que no existe evidencia de prueba en servidor.
+- **SCRUM-8–SCRUM-14:** permanecen en `BD-TPM` por sus dependencias. No se eligió SGBD ni se creó SQL/DDL.
 - Los comentarios Jira deben incluir qué se hizo, qué sigue y la versión documental correspondiente.
