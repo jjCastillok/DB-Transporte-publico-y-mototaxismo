@@ -33,6 +33,8 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - [Diccionario físico MariaDB — E9](docs/09_diccionario_fisico.csv)
 - [Especificación física MariaDB — E10](docs/10_especificacion_fisica.md)
 - [Verificación previa MariaDB — E11](docs/11_verificacion_previa.md)
+- [Gestión del código SQL MariaDB](docs/gestion_codigo_mariadb.md)
+- [Solicitud P11-CR-01 — tickets/tokens de entrada/salida](docs/solicitud_cambio_01_tickets_tokens.md)
 - [Plan de commits](docs/plan_commits.md)
 - [Propuesta de backlog Jira](docs/backlog_jira_propuesta.md)
 - [Vinculación y automatización Jira–GitHub](docs/automatizacion_jira.md)
@@ -43,6 +45,7 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - La Fase 2 lógica fue aprobada por el usuario el 14 nov 2026.
 - MariaDB fue elegido; la versión instalada no se ha cotejado. MariaDB 11.8.9 LTS es objetivo propuesto, no una versión confirmada en el equipo.
 - Revisar y aprobar la Fase 3 física E9–E11, incluidos pendientes de estados, terminales, accesibilidad, referencias protegidas y concurrencia.
+- Precisar P11-CR-01: qué representan entrada/salida del vehículo, para adaptar E5–E11 antes de DDL.
 - Integrantes, duración de Sprint y fechas de entrega.
 - Jira queda en pausa por decisión del usuario; sus referencias conservan el último estado observado y no representan cambios posteriores.
 
