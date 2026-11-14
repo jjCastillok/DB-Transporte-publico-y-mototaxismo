@@ -1,0 +1,57 @@
+tabla;columna;tipo_mariadb_propuesto;nulabilidad;predeterminado;clave_o_restriccion;significado_y_unidad;trazabilidad;estado_y_pendiente
+EmpresaOperadora;id_empresa;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico de la empresa operadora;R01;PROPUESTO
+EmpresaOperadora;nombre;VARCHAR(120);NOT NULL;Sin valor automático;Ninguna;Nombre de la empresa;R01;Longitud propuesta, validar con datos institucionales
+Vehiculo;id_vehiculo;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico del vehículo;R01;PROPUESTO
+Vehiculo;id_empresa;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a EmpresaOperadora;Empresa operadora responsable del vehículo;R01;PROPUESTO
+Vehiculo;capacidad;SMALLINT UNSIGNED;NOT NULL;Sin valor automático;CHECK capacidad mayor que cero;Capacidad de pasajeros expresada como cantidad de plazas;R01;Límite físico propuesto, validar rango permitido
+Vehiculo;accesible;BOOLEAN;NOT NULL;Sin valor automático;CHECK valor binario;Indica si el vehículo satisface el criterio de accesibilidad acordado;R01;Definir criterio verificable de accesibilidad
+Vehiculo;caracteristicas_accesibilidad;VARCHAR(500);NULL;NULL implícito;Ninguna;Descripción atómica opcional de características accesibles;R01;PENDIENTE: si son categorías múltiples, ajustar a catálogo y relación antes del DDL
+Sector;id_sector;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico del sector;R02;PROPUESTO
+Sector;nombre;VARCHAR(100);NOT NULL;Sin valor automático;Ninguna;Nombre legible del sector;R02;Longitud propuesta y unicidad pendiente
+Sector;codigo;VARCHAR(30);NULL;NULL implícito;Candidata pendiente;Código operativo del sector, si existe;R02;PENDIENTE: confirmar que el negocio maneja códigos
+PuntoServicio;id_punto;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico del paradero o terminal;R03;PROPUESTO
+PuntoServicio;id_sector;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a Sector;Sector al que pertenece el punto de servicio;R03;PROPUESTO
+PuntoServicio;tipo;VARCHAR(15);NOT NULL;Sin valor automático;CHECK PARADERO o TERMINAL;Clasificación del punto de servicio;R03;PENDIENTE: confirmar si terminal también puede ser parada de ruta
+PuntoServicio;nombre;VARCHAR(120);NOT NULL;Sin valor automático;Ninguna;Nombre legible del punto de servicio;R03;Longitud propuesta
+PuntoServicio;ubicacion;VARCHAR(250);NULL;NULL implícito;Ninguna;Descripción textual de ubicación, sin coordenadas no solicitadas;R03;Formato y detalle territorial pendientes
+ParaderoHabilitado;id_punto;BIGINT UNSIGNED;NOT NULL;Sin valor automático;PK y FK a PuntoServicio;Pertenencia actual al conjunto de paraderos habilitados;RN02;Habilitación global vigente aprobada como supuesto del modelo
+Ruta;id_ruta;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico de la ruta;R04;PROPUESTO
+Ruta;codigo;VARCHAR(30);NULL;NULL implícito;Candidata pendiente;Código operativo de la ruta, si existe;R04;PENDIENTE: confirmar código y unicidad
+Ruta;nombre;VARCHAR(100);NOT NULL;Sin valor automático;Ninguna;Nombre legible de la ruta;R04;Longitud propuesta
+PasoRuta;id_ruta;BIGINT UNSIGNED;NOT NULL;Sin valor automático;PK parcial y FK a Ruta;Ruta a la que pertenece este paso;R04;PROPUESTO
+PasoRuta;orden;SMALLINT UNSIGNED;NOT NULL;Sin valor automático;PK parcial;Posición secuencial del punto dentro de la ruta;R04;Límite físico propuesto
+PasoRuta;id_punto;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a ParaderoHabilitado;Paradero habilitado programado en esta posición;RN02;La FK protege membresía. Alcance de terminal pendiente
+Turno;id_turno;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico del turno;R05;PROPUESTO
+Turno;nombre;VARCHAR(50);NOT NULL;Sin valor automático;Ninguna;Etiqueta legible del turno;R05;Horarios de turno no separados del intervalo de asignación en el modelo actual
+Asignacion;id_asignacion;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico del evento histórico de asignación;R05;PROPUESTO
+Asignacion;id_vehiculo;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a Vehiculo;Vehículo asignado;R05;PROPUESTO
+Asignacion;id_ruta;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a Ruta;Ruta atendida;R05;PROPUESTO
+Asignacion;id_turno;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a Turno;Turno asociado;R05;PROPUESTO
+Asignacion;inicio;DATETIME;NOT NULL;Sin valor automático;CHECK anterior a fin_programado;Inicio local de la asignación, hora de Bogotá;R05;Convención temporal propuesta
+Asignacion;fin_programado;DATETIME;NOT NULL;Sin valor automático;CHECK posterior a inicio;Fin planeado local, hora de Bogotá;R05;Convención temporal propuesta
+Asignacion;estado;VARCHAR(20);NOT NULL;Sin valor automático;Dominio pendiente;Estado operativo de la asignación;RN01;PENDIENTE: cerrar catálogo de estados y significado de FINALIZANDO
+Asignacion;fin_real;DATETIME;NULL;NULL implícito;CHECK posterior a inicio cuando informado;Fin real local de la asignación, hora de Bogotá;RN01;PROPUESTO
+Inspeccion;id_inspeccion;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico de la inspección;R06;PROPUESTO
+Inspeccion;fecha_hora;DATETIME;NOT NULL;Sin valor automático;Ninguna;Momento local de la inspección, hora de Bogotá;R06;Convención temporal propuesta
+Inspeccion;responsable;VARCHAR(64);NOT NULL;Sin valor automático;Ninguna;Referencia institucional protegida del responsable, no nombre ni dato de conductor;R06;PENDIENTE: definir identificador protegido y acceso
+Inspeccion;id_vehiculo;BIGINT UNSIGNED;NULL;NULL implícito;FK a Vehiculo;Objetivo vehículo cuando sea una inspección vehicular;R06;Una sola FK objetivo por evento
+Inspeccion;id_empresa;BIGINT UNSIGNED;NULL;NULL implícito;FK a EmpresaOperadora;Objetivo empresa cuando sea una inspección empresarial;R06;Una sola FK objetivo por evento
+Inspeccion;id_asignacion;BIGINT UNSIGNED;NULL;NULL implícito;FK a Asignacion;Objetivo servicio secundario cuando aplique;R06;Una sola FK objetivo por evento
+Condicion;id_condicion;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico de condición inspeccionable;R07;PROPUESTO
+Condicion;nombre;VARCHAR(120);NOT NULL;Sin valor automático;Ninguna;Nombre de condición inspeccionable;R07;PROPUESTO
+Condicion;categoria;VARCHAR(40);NOT NULL;Sin valor automático;Dominio pendiente;Grupo temático, por ejemplo laboral, parada autorizada o recaudo;R07;Valores controlados pendientes
+EvaluacionInspeccion;id_inspeccion;BIGINT UNSIGNED;NOT NULL;Sin valor automático;PK parcial y FK a Inspeccion;Inspección que contiene la evaluación;R07;PROPUESTO
+EvaluacionInspeccion;id_condicion;BIGINT UNSIGNED;NOT NULL;Sin valor automático;PK parcial y FK a Condicion;Condición evaluada;R07;PROPUESTO
+EvaluacionInspeccion;resultado;VARCHAR(30);NOT NULL;Sin valor automático;Dominio pendiente;Resultado de la condición;R07;PENDIENTE: acordar valores permitidos
+EvaluacionInspeccion;observacion;TEXT;NULL;NULL implícito;Ninguna;Observación breve sin datos personales innecesarios;R07;PROPUESTO
+ConfirmacionServicio;id_confirmacion;BIGINT UNSIGNED;NOT NULL;AUTO_INCREMENT;PK;Identificador técnico de una confirmación de servicio;R08;PROPUESTO
+ConfirmacionServicio;id_asignacion;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a Asignacion;Asignación que permite derivar vehículo y ruta;R08;PROPUESTO
+ConfirmacionServicio;id_sector;BIGINT UNSIGNED;NOT NULL;Sin valor automático;FK a Sector;Sector donde el vehículo confirma servicio;R08;PROPUESTO
+ConfirmacionServicio;fecha_hora;DATETIME;NOT NULL;Sin valor automático;Ninguna;Momento local de confirmación, hora de Bogotá;R08;Convención temporal propuesta
+ConfirmacionServicio;tipo_evidencia;VARCHAR(20);NOT NULL;Sin valor automático;CHECK TOKEN_APP, TICKET_APP o TICKET_IMPRESO;Tipo de evidencia conservada, sin guardar su contenido;R08;Propuesta de dominio basada en aclaración del usuario
+ConfirmacionServicio;referencia_evidencia;VARCHAR(100);NULL;NULL implícito;Ninguna;Referencia no personal y no secreta opcional;R08;PENDIENTE: nunca almacenar token/ticket bruto
+ReporteIlegalSectorPeriodo;id_sector;BIGINT UNSIGNED;NOT NULL;Sin valor automático;PK parcial y FK a Sector;Sector al que corresponde el agregado;R09;PROPUESTO
+ReporteIlegalSectorPeriodo;periodo_inicio;DATE;NOT NULL;Sin valor automático;PK parcial y CHECK;Inicio inclusivo del periodo agregado;R09;Granularidad del periodo pendiente
+ReporteIlegalSectorPeriodo;periodo_fin;DATE;NOT NULL;Sin valor automático;PK parcial y CHECK no anterior a inicio;Fin inclusivo del periodo agregado;R09;Granularidad del periodo pendiente
+ReporteIlegalSectorPeriodo;total;BIGINT UNSIGNED;NOT NULL;Sin valor automático;CHECK no negativo;Cantidad agregada de reportes, sin identificar personas;R09;PROPUESTO
+
