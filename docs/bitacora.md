@@ -7,6 +7,7 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - El usuario pidió gestionar tickets y tokens para registrar entrada/salida de vehículos y documentar la gestión del código SQL para MariaDB/Workbench.
 - Se registró la solicitud como cambio de alcance porque E5 solo modelaba confirmaciones genéricas de servicio por Sector y no definía eventos explícitos de entrada/salida.
 - Se creó `docs/solicitud_cambio_01_tickets_tokens.md` con proceso propuesto, alternativas, privacidad y decisiones pendientes; `docs/gestion_codigo_mariadb.md` documenta estructura y manejo futuro de SQL.
+- Publicado en [gestión de código SQL](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/03949eb6efd6d5569cc261602d085b2c2672bbc6), [solicitud P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/87e19046efbac4cfcf3bcd94f0d9d721a53eec6e), [README actualizado](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/776d7c22f79baaa3f7570a980b11dd187663c050) y [Scrum documentado](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/fbbda145d28b6b11e365628ab5d12005290234f9).
 - Se preguntó si entrada/salida significa inicio y fin de asignación, control en terminal/patio o ambos. La definición queda pendiente; el modelo y el DDL final no se modifican hasta incorporar esa respuesta y aprobación.
 - No se emitieron tickets ni tokens reales, no se guardó secreto y no se generó DDL, trigger ni procedimiento.
 
