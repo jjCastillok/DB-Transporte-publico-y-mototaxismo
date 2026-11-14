@@ -7,14 +7,15 @@
 - Épico: [SCRUM-5 — P11](https://jjjk3022.atlassian.net/browse/SCRUM-5).
 - Auditoría 2026-11-14: un board visible asociado al proyecto, `SCRUM board` (ID 1); columnas reales: `BD-TPM`, `En curso`, `Pruebas`, `Finalizado`. `BD-TPM` es el estado pendiente (categoría To Do), no un board adicional.
 - Conexión GitHub/Jira y regla de automatización de commits siguen sin verificación efectiva; no afirmar sincronización automática activa.
+- Decisión del usuario 2026-11-14: Jira queda en pausa y no se harán más cambios en tickets/tableros por ahora. La información previa se conserva como historial; el seguimiento activo se lleva en los documentos y commits del repositorio.
 
 ## Backlog trazable
 
 | ID | Ticket | Alcance | Estado documentado / siguiente paso |
 |---|---|---|---|
 | HU-01 | [SCRUM-6](https://jjjk3022.atlassian.net/browse/SCRUM-6) | Cerrar decisiones conceptuales | **Finalizado**; aclaraciones recibidas y evidencias E1–E4 actualizadas. |
-| HU-02 | [SCRUM-7](https://jjjk3022.atlassian.net/browse/SCRUM-7) | Modelo lógico, integridad y demostración 3FN | **En curso; Sprint 0**. E5–E8 propuestos, pendientes revisión y aprobación. |
-| HU-03 | [SCRUM-8](https://jjjk3022.atlassian.net/browse/SCRUM-8) | Elegir SGBD y diseño físico | Solo después de aprobar Fase 2. |
+| HU-02 | [SCRUM-7](https://jjjk3022.atlassian.net/browse/SCRUM-7) | Modelo lógico, integridad y demostración 3FN | **Fase 2 aprobada por el usuario el 2026-11-14**. Jira conserva su último estado observado; no se actualizó. |
+| HU-03 | [SCRUM-8](https://jjjk3022.atlassian.net/browse/SCRUM-8) | Elegir SGBD y diseño físico | MariaDB elegido; E9–E11 en propuesta. Versión instalada pendiente de cotejo y aprobación de Fase 3. |
 | HU-04 | [SCRUM-9](https://jjjk3022.atlassian.net/browse/SCRUM-9) | DDL documentado | Bloqueada por Fase 3, SGBD y aprobación. |
 | HU-05 | [SCRUM-10](https://jjjk3022.atlassian.net/browse/SCRUM-10) | DML sintético y privacidad | Después de aprobar DDL. |
 | HU-06 | [SCRUM-11](https://jjjk3022.atlassian.net/browse/SCRUM-11) | Consultas de operación y cobertura | Requiere modelo y datos de prueba aprobados. |
@@ -33,7 +34,7 @@ Cada ticket usa identificador `P11-HU-nn`, describe propósito, hecho, estado, s
 | Columna Jira | Tickets P11 al 2026-11-14 | Criterio |
 |---|---|---|
 | BD-TPM | SCRUM-8–SCRUM-14 | Pendientes por dependencia. |
-| En curso | SCRUM-7 | Preparación y revisión de E5–E8; no significa diseño aprobado. |
+| En curso | SCRUM-7 (último estado de Jira observado) | Fase 2 aprobada; diseño físico E9–E11 en elaboración fuera de Jira. |
 | Pruebas | Ninguno | Sin SGBD ni DDL aprobados; no hay prueba real que registrar. |
 | Finalizado | SCRUM-6 | Aclaraciones y revisión conceptual completadas. |
 
@@ -45,7 +46,8 @@ Se usa el único board disponible de principio a fin. Sus columnas son estados d
 - Se usará **Sector**. Cobertura se deriva de confirmación de servicios por vehículo con evidencia tipo token/ticket (app o impreso).
 - Se permite simultaneidad bajo condición de finalizando/finalizada; la regla exacta de intervalo aún requiere precisión para implementación.
 - Se generaron borradores lógicos E5–E8 con análisis explícito de 1FN, 2FN y 3FN.
-- Jira se auditó y actualizó. SCRUM-6 pasó a Finalizado; SCRUM-7 pasó a En curso y Sprint 0. E5–E8 siguen pendientes de aprobación.
+- La Fase 2 fue aprobada por el usuario. E5–E8 se publicaron en commits individuales; el usuario eligió MariaDB para Fase 3.
+- Jira queda en pausa por decisión del usuario. El último estado observado fue SCRUM-6 Finalizado y SCRUM-7 En curso/Sprint 0; no se modificó ni se presume sincronización automática.
 - La columna Pruebas queda sin tickets P11 hasta que exista una implementación y evidencia real.
 
 ## Integración de commits
@@ -54,7 +56,8 @@ Convención: `SCRUM-7 docs: draft logical model`. La clave permite vincular el c
 
 ## Retomar el trabajo
 
-1. Revisar E5–E8 en el repositorio y aprobar o ajustar pendientes.
-2. Si se aprueba Fase 2, responder la pregunta obligatoria del SGBD; no crear antes SQL.
-3. Registrar la decisión en bitácora, actualizar SCRUM-6/7 y conservar un commit por alcance.
-4. Más adelante, retomar SCRUM-14 desde Jira UI para completar integración y regla automática.
+1. Revisar E9–E11 y aprobar o ajustar el diseño físico propuesto para MariaDB.
+2. Antes del DDL, cotejar la versión real con `SELECT VERSION();` y confirmar que el esquema destino esté vacío.
+3. Solo tras aprobar Fase 3, preparar DDL documentado, inventario documental, migración de comentarios pendiente de metadatos reales y reporte de mejoras no aplicadas.
+4. Jira queda pausado; al reanudarlo, actualizar sus tickets desde el último estado documentado.
+
