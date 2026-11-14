@@ -2,6 +2,16 @@
 
 Registro cronológico para saber qué se hizo, qué falta y cómo retomar el proyecto.
 
+## Retoma de Fase 2 y publicación de E5–E8 (2026-11-14)
+
+- El usuario decidió dejar Jira en pausa y continuar con la fase lógica; no se modificaron boards ni tickets en esta sesión.
+- Se revisaron los artefactos E5–E8: modelo relacional, justificación estática de 1FN–3FN, diagrama lógico y trazabilidad de requisitos.
+- Se confirmó que E8 contiene 18 registros de trazabilidad, que el diagrama conceptual editable conserva XML válido y que no quedan nombres de relaciones de inspección obsoletos en E5–E8.
+- Se publicaron los cambios de fase lógica en cuatro commits pequeños: [E5](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/ddc4335d1a87d0be47c7d1cd509edbee0951a019), [E6](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/b819435d224fc2542a9000e1a8bc00b8bd8ae5a9), [E7](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/70e1193dc3bb80a86b9de6e3164030ae3645dafa) y [E8](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/cd79122e8da70d245d525b3a7f900b9fb07c1a53).
+- La 3FN se revisó de forma lógica y estática; no existe todavía una implementación ni una prueba contra SGBD. No se generaron DDL, SQL ni código Java.
+- Fase 2 sigue como propuesta: falta la revisión y aprobación del usuario y cerrar las decisiones abiertas listadas en E5/E6. Después de aprobar, se preguntará por el SGBD antes de pasar al diseño físico.
+- Punto de reanudación: revisar `docs/05_modelo_logico.md` y `docs/06_normalizacion.md`; responder los pendientes del bloque “Pendientes que afectan aprobación” y revisar E7/E8 como soporte visual y trazable.
+
 ## Auditoría de Jira boards y organización del flujo (2026-11-14)
 
 - Publicación de la organización Jira y del historial: [commit a4c926d](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/a4c926df13ba713cbc3ded2ab00b1f1edcff8c10).
@@ -13,6 +23,14 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - `SCRUM-8`–`SCRUM-14` permanecen en BD-TPM por dependencias. Ningún P11 está en `Pruebas`: no existe SGBD/DDL aprobado ni evidencia de prueba real.
 - Se actualizaron el Epic y las descripciones/comentarios de SCRUM-6/SCRUM-7. No se tocaron tickets genéricos.
 - Para retomar: abrir SCRUM-7 en En curso y revisar E5–E8. No avanzar tickets a Pruebas sin una implementación aprobada y evidencia verificable.
+
+## Diseño lógico E5–E8 · revisión 0.2 (2026-11-14)
+
+- Se hizo explícita la relación `PasoRuta.id_punto → ParaderoHabilitado.id_punto`, para que el diseño lógico represente la regla de que los paraderos programados estén autorizados, bajo el supuesto de habilitación global vigente.
+- Se actualizó el análisis de dependencias funcionales y el diagrama lógico; E3 textual y E4 conceptual trazan ahora la relación con autorización.
+- La nueva definición sigue **PROPUESTA / REVISADA ESTÁTICAMENTE**. Falta confirmar autorización global o por ruta y su vigencia, si terminales pueden ser pasos de ruta, cobertura por paradero, granularidad de inspección y semántica de solapamiento.
+- No se eligió SGBD y no se generó SQL/DDL ni código. Tampoco se afirma ejecución en servidor.
+- Próximo paso: revisar E5–E8 v0.2, ajustar los supuestos indicados y aprobar Fase 2. Después de aprobarla, corresponderá preguntar el SGBD.
 
 ## Actualización — aclaraciones y diseño lógico (2026-11-14)
 
@@ -78,3 +96,4 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 ## Punto de reanudación
 
 Abrir `docs/05_modelo_logico.md`, `docs/06_normalizacion.md`, `docs/07_diagrama_logico.md` y `docs/08_trazabilidad_logica.csv`; revisar la propuesta antes de la aprobación de Fase 2. `docs/01_analisis_semantico.md` conserva las decisiones y pendientes. No iniciar DDL antes de que el usuario apruebe el modelo lógico y elija SGBD.
+
