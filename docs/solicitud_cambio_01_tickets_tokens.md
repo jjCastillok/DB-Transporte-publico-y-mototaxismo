@@ -2,7 +2,8 @@
 
 **Fecha:** 2026-11-14  
 **Solicitó:** usuario del proyecto  
-**Estado:** PROPUESTO; pregunta de alcance enviada, sin respuesta todavía.  
+**Versión:** 0.3 — eventos y lugares de control definidos, 2026-11-14  
+**Estado:** PROPUESTO; eventos/lugares confirmados, modalidad de emisión pendiente.  
 **Alcance:** solo control de vehículos y servicios del proyecto de transporte.
 
 ## Solicitud recibida
@@ -30,6 +31,15 @@ El modelo aprobado ya conserva confirmaciones de servicio basadas en token o tic
 
 Ventaja: cada token/ticket se emite una vez y se pueden conservar varias acciones sin repetir datos de credencial. Requiere acordar cuántos eventos se permiten por asignación y qué punto deben registrar.
 
+### Alcance confirmado por el usuario
+
+La solución debe admitir **ambos grupos de eventos**:
+
+1. Inicio y fin de la asignación/servicio del vehículo.
+2. Entrada y salida de un lugar operativo.
+
+Los lugares de control serán **cualquier punto habilitado que forme parte de la ruta**. El evento de entrada/salida debe enlazarse a un paso concreto de esa ruta, no a un punto ajeno a la asignación. La confirmación de servicio por Sector sigue siendo distinta: una entrada o salida física no cuenta por sí sola como cobertura territorial.
+
 ### B. Un registro por evento
 
 - Extender `ConfirmacionServicio` para añadir el tipo de evento y datos de acceso.
@@ -40,9 +50,9 @@ No se ha elegido ni implementado ninguna alternativa.
 
 ## Decisiones que faltan
 
-- **P11-CR-01-Q1 (en espera):** ¿entrada/salida significa inicio y fin de una asignación, ingreso/salida de terminal o patio, o ambos?
-- **P11-CR-01-Q2:** ¿un código emitido por asignación sirve para entrada y salida, o se emite uno diferente por cada evento?
-- **P11-CR-01-Q3:** si existen varios controles en la ruta, ¿cada entrada/salida guarda `PuntoServicio`, o basta con `Sector`?
+- **P11-CR-01-Q1 (respondida):** ambos grupos de eventos: inicio/fin de asignación e ingreso/salida de lugar operativo.
+- **P11-CR-01-Q2 (en espera):** ¿un código emitido por asignación sirve para varios eventos, o se emite uno diferente por evento?
+- **P11-CR-01-Q3 (respondida):** se controlará cualquier punto habilitado de la ruta.
 - Definir expiración, reuso y anulación del código; el sistema no debe emitir un token que autentique a una persona.
 
 ## Tratamiento de seguridad
@@ -55,5 +65,5 @@ No se ha elegido ni implementado ninguna alternativa.
 
 ## Próximo paso
 
-Al recibir respuesta a Q1, actualizar el análisis, modelo lógico E5, normalización E6, diagrama E7, trazabilidad E8 y los artefactos físicos E9–E11 que dependan del alcance. Después pedir aprobación de esos cambios. No crear aún tablas, triggers, procedimientos, tickets reales ni tokens reales.
+Al recibir respuesta a Q2, actualizar el análisis, modelo lógico E5, normalización E6, diagrama E7, trazabilidad E8 y los artefactos físicos E9–E11 que dependan del alcance. Después pedir aprobación de esos cambios. No crear aún tablas, triggers, procedimientos, tickets reales ni tokens reales.
 
