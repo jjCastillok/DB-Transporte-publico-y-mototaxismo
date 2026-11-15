@@ -8,7 +8,11 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 - Se registró la solicitud como cambio de alcance porque E5 solo modelaba confirmaciones genéricas de servicio por Sector y no definía eventos explícitos de entrada/salida.
 - Se creó `docs/solicitud_cambio_01_tickets_tokens.md` con proceso propuesto, alternativas, privacidad y decisiones pendientes; `docs/gestion_codigo_mariadb.md` documenta estructura y manejo futuro de SQL.
 - Publicado en [gestión de código SQL](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/03949eb6efd6d5569cc261602d085b2c2672bbc6), [solicitud P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/87e19046efbac4cfcf3bcd94f0d9d721a53eec6e), [README actualizado](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/776d7c22f79baaa3f7570a980b11dd187663c050) y [Scrum documentado](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/fbbda145d28b6b11e365628ab5d12005290234f9).
-- Se preguntó si entrada/salida significa inicio y fin de asignación, control en terminal/patio o ambos. La definición queda pendiente; el modelo y el DDL final no se modifican hasta incorporar esa respuesta y aprobación.
+- El usuario confirmó ambos grupos de eventos: inicio/fin de asignación e ingreso/salida física; los eventos físicos se registrarán contra cualquier paso habilitado de la ruta.
+- Falta decidir si la credencial será por asignación y reutilizable para varios eventos, o distinta para cada evento.
+- La cobertura por Sector seguirá dependiendo de una confirmación del servicio; el ingreso/salida física no contará automáticamente como cobertura.
+- La revisión 0.3 quedó publicada en la [solicitud P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/7b93a993e64b1f145a0e3d6303f488ead7b35e91), la [guía SQL MariaDB](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/ec0b3c3780d9f01759b5eac34acaa217c79f4e7a), el [README](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/04d10f0cb4c63274a5195074cc92816892829521) y el [seguimiento Scrum](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/21437956cd95d5674e912dc0d4b275d6e845f0e7).
+- El modelo lógico y el DDL final no se modifican hasta completar las decisiones pendientes y aprobar la revisión afectada.
 - No se emitieron tickets ni tokens reales, no se guardó secreto y no se generó DDL, trigger ni procedimiento.
 
 ## Aprobación de Fase 2 y preparación de Fase 3 (2026-11-14)
@@ -109,7 +113,7 @@ Registro cronológico para saber qué se hizo, qué falta y cómo retomar el pro
 ## Pendiente para la próxima sesión
 
 1. Revisar y aprobar/ajustar E9–E11 para MariaDB; leer los pendientes de tipos y dominios físicos.
-2. Responder P11-CR-01-Q1 para definir si los eventos corresponden a servicio, terminal/patio o ambos; luego cerrar Q2/Q3.
+2. Responder P11-CR-01-Q2 para definir si una credencial se reutiliza para varios eventos o si se emite una por evento.
 3. Antes de escribir DDL, cotejar versión del servidor (`SELECT VERSION()`), disponibilidad de InnoDB y collation; no compartir credenciales.
 4. Tras aprobación de Fase 3, preparar DDL documentado y los artefactos de inventario, migración exclusivamente documental y mejoras no aplicadas.
 5. No generar datos sintéticos hasta que el DDL propuesto y documentado haya recibido su puerta de aprobación.
