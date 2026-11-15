@@ -8,7 +8,7 @@
 - Auditoría 2026-11-14: un board visible asociado al proyecto, `SCRUM board` (ID 1); columnas reales: `BD-TPM`, `En curso`, `Pruebas`, `Finalizado`. `BD-TPM` es el estado pendiente (categoría To Do), no un board adicional.
 - Conexión GitHub/Jira y regla de automatización de commits siguen sin verificación efectiva; no afirmar sincronización automática activa.
 - Decisión del usuario 2026-11-14: Jira queda en pausa y no se harán más cambios en tickets/tableros por ahora. La información previa se conserva como historial; el seguimiento activo se lleva en los documentos y commits del repositorio.
-- Solicitud nueva P11-CR-01: gestión de tickets/tokens para entrada y salida de vehículos y guía del código SQL MariaDB. La definición del evento está pendiente; no se creó SQL ni credenciales.
+- Solicitud nueva P11-CR-01: gestión de tickets/tokens para inicio/fin de asignación y entrada/salida física de vehículos, además de guía SQL MariaDB. Falta decidir modalidad de credencial y lugares controlados; no se creó SQL ni credenciales.
 
 ## Backlog trazable
 
