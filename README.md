@@ -45,7 +45,7 @@ La guía del curso y el ejemplo del caso P01 se conservan localmente como refere
 - La Fase 2 lógica fue aprobada por el usuario el 14 nov 2026.
 - MariaDB fue elegido; la versión instalada no se ha cotejado. MariaDB 11.8.9 LTS es objetivo propuesto, no una versión confirmada en el equipo.
 - Revisar y aprobar la Fase 3 física E9–E11, incluidos pendientes de estados, terminales, accesibilidad, referencias protegidas y concurrencia.
-- Precisar P11-CR-01: qué representan entrada/salida del vehículo, para adaptar E5–E11 antes de DDL.
+- Precisar P11-CR-01: se confirmaron ambos grupos de eventos y cualquier paso habilitado de la ruta; falta decidir si la credencial se reutiliza para varios eventos o es distinta por evento, para adaptar E5–E11 antes de DDL.
 - Integrantes, duración de Sprint y fechas de entrega.
 - Jira queda en pausa por decisión del usuario; sus referencias conservan el último estado observado y no representan cambios posteriores.
 
