@@ -100,9 +100,13 @@ Publicado por archivos con mensajes de alcance específico: [E5 aprobado](https:
 
 **Archivos:** `docs/solicitud_cambio_01_tickets_tokens.md`, `docs/gestion_codigo_mariadb.md`, README, Scrum, bitácora y este plan.
 
-**Alcance:** documentar la solicitud de tickets/tokens para entrada/salida y explicar cómo se organizará el código SQL en MariaDB. El significado de entrada/salida aún debe confirmarse; no incluye DDL ni credenciales.
+**Alcance:** documentar la solicitud de tickets/tokens para inicio/fin de asignación y entrada/salida física, además de cómo se organizará el código SQL en MariaDB. Está pendiente definir cardinalidad de credenciales y lugares controlados; no incluye DDL ni credenciales reales.
 
 Publicado en commits separados: [guía de gestión del código](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/03949eb6efd6d5569cc261602d085b2c2672bbc6), [solicitud de cambio P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/87e19046efbac4cfcf3bcd94f0d9d721a53eec6e), [README](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/776d7c22f79baaa3f7570a980b11dd187663c050), [Scrum](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/fbbda145d28b6b11e365628ab5d12005290234f9) y [bitácora](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/7c70cebdf73f56ba284a3a9522433a97ab23823e).
+
+**Actualización 0.3:** el usuario confirmó inicio/fin de asignación, entrada/salida física y control de cualquier paso habilitado de ruta. Solo falta decidir si una credencial se reutiliza o se emite por evento; los documentos de cambio y guía se actualizarán antes de revisar E5–E11.
+
+Publicado en commits separados: [solicitud P11-CR-01](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/7b93a993e64b1f145a0e3d6303f488ead7b35e91), [guía SQL MariaDB](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/ec0b3c3780d9f01759b5eac34acaa217c79f4e7a), [README](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/04d10f0cb4c63274a5195074cc92816892829521) y [Scrum](https://github.com/jjCastillok/DB-Transporte-publico-y-mototaxismo/commit/21437956cd95d5674e912dc0d4b275d6e845f0e7).
 
 ## Archivos de referencia del curso
 
