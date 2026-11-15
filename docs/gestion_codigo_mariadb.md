@@ -1,7 +1,7 @@
 # Gestión del código SQL · MariaDB
 
 **Proyecto:** Transporte público y mototaxismo: rutas, flota y cumplimiento  
-**Versión:** 0.1 — guía de organización, 2026-11-14  
+**Versión:** 0.2 — guía de organización y alcance de eventos actualizado, 2026-11-14  
 **Estado:** PROPUESTO; el DDL queda pendiente de aprobación de Fase 3.  
 **Herramienta de edición:** el usuario dispone de varios entornos; no se impone uno. Workbench podrá usarse como cliente después de identificar producto y versión.
 
@@ -48,7 +48,10 @@ Workbench es una interfaz, no el motor. El diseño objetivo es MariaDB; un clien
 Solicitud pendiente P11-CR-01:
 
 - el ticket/token debe corresponder a un vehículo y a una asignación, no a una persona;
-- cada evento debe tener una hora y tipo definido (entrada/salida), pero el usuario debe decidir si representa inicio/fin del servicio, control en terminal/patio o ambos;
+- el usuario confirmó que se requieren tanto inicio/fin de asignación como entrada/salida de un lugar operativo;
+- falta confirmar si la credencial se emite una vez por asignación o una vez por evento;
+- entrada/salida física se registra contra cualquier paso habilitado de la ruta asignada;
+- cada evento debe tener hora y tipo definido; una entrada/salida física no se cuenta automáticamente como cobertura de Sector: esa cobertura sigue exigiendo confirmación de servicio;
 - no guardar token secreto en texto claro ni publicar tokens en GitHub; almacenar un hash y entregar el secreto una sola vez al emitirlo;
 - los tickets impresos se vinculan con una referencia opaca;
 - no generar todavía tokens reales, tablas, triggers o procedimientos. Primero se actualiza y aprueba el modelo lógico y físico.
@@ -60,7 +63,7 @@ Solicitud pendiente P11-CR-01:
 | E5–E8 modelo lógico | Aprobado por usuario; cambios del ciclo entrada/salida pendientes de aclaración |
 | E9–E11 diseño físico MariaDB | Propuesto; pendiente de revisión/aprobación y cotejo de versión |
 | DDL documentado | No creado; requiere aprobación de Fase 3 |
-| Ticket/token de servicio | Cambio solicitado; semántica de entrada/salida pendiente |
+| Ticket/token de servicio | Ambos grupos definidos; eventos asociados a pasos habilitados de ruta. Modalidad de emisión pendiente |
 | Datos sintéticos | No creados; requieren DDL aprobado y puerta de datos |
 
 ## Por qué se organiza así
@@ -73,5 +76,5 @@ Workbench puede conectarse a servidores de la familia MySQL, pero no se asumirá
 
 ## Próximo paso
 
-Responder P11-CR-01-Q1, revisar E9–E11 y aprobar o ajustar Fase 3. Solo después se prepara `sql/12_creacion_esquema_mariadb.sql` completamente comentado, y se solicitará su aprobación antes de crear DML.
+Responder P11-CR-01-Q2, ajustar E5–E11 y aprobar los cambios. Luego revisar E9–E11 y aprobar Fase 3. Solo después se prepara `sql/12_creacion_esquema_mariadb.sql` completamente comentado, y se solicitará su aprobación antes de crear DML.
 
